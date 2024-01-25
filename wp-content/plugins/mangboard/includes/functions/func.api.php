@@ -303,7 +303,7 @@ if(!function_exists('mbw_check_api_required')){
 							}
 
 						}else if(!isset($api_fields[$data["field"]])){		//field가 정의되어 있지 않을 경우 에러 출력
-							mbw_error_message("%s field error", $api_fields[$data["field"]],"1302");
+							mbw_error_message("%s field error".$data["field"], $api_fields[$data["field"]],"1302");
 							break;
 						}else if(!isset($send_data[$api_fields[$data["field"]]]) || $send_data[$api_fields[$data["field"]]]==""){		//field 값이 비어있을 경우 에러 출력			
 							$check_required		= true;

@@ -52,8 +52,7 @@ $desktop_model['write']		= '
 {"field":"fn_title","name":"W_TITLE","width":"99%","required":"(*)","class":"text-left","required_error":"MSG_FIELD_EMPTY_ERROR2","filter":"filter_swear","filter_error":"MSG_WORD_UNUSABLE"},
 {"field":"fn_content","name":"W_CONTENT","width":"100%","height":"360px","type":"content","class":"mb-content","colspan":"2","td_class":"content-box","required_error":"MSG_FIELD_EMPTY_ERROR2","filter":"filter_swear","filter_error":"MSG_WORD_UNUSABLE"},
 {"field":"fn_tag","name":"W_TAG","width":"99%","class":"tag","description":"<br>(MSG_TAG_INPUT)"},
-{"field":"fn_file1","name":"W_FILE1","width":"300px","type":"file","class":"mb-file-upload"},
-{"field":"fn_file2","name":"W_FILE2","width":"300px","type":"file","class":"mb-file-upload"},
+{"field":"fn_file1","name":"W_THUMBNAIL","width":"300px","type":"file","class":"mb-file-upload"},
 {"type":"kcaptcha_img","name":"W_KCAPTCHA","width":"70px","height":"30px","class":"kcaptcha","level":{"sign":"<","grade":"1"},"modify":"none","description":"<br>(MSG_CAPTCHA_INPUT)"},
 {"tpl":"tag","tag_name":"table","type":"end"}
 ';

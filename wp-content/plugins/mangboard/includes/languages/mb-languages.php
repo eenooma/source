@@ -432,6 +432,7 @@ $mb_languages["W_POINT_LOG"]	= "Point Log";
 
 $mb_languages["W_ERROR_LOG"]	= "Error Log";
 $mb_languages["W_NAME"]	= "Name";
+$mb_languages["W_NAME1"]	= "Name";
 
 $mb_languages["W_SING_UP"]	= "Sign Up";
 

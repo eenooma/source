@@ -12,10 +12,12 @@ mbw_set_vars("write_layout_class",'mb-max-width-1000');
 $desktop_model['list']		= '
 {"type":"list_check","width":"30px","level":"10","class":"list_check"},
 {"field":"fn_pid","name":"W_PID","width":"50px","class":"num","type":"pid","class":"pid","responsive":"mb-hide-mobile mb-hide-tablet"},
-{"field":"fn_title","name":"W_TITLE","width":"","type":"title","maxlength":"90","maxtext":"..","td_class":"text-left"},
-{"field":"fn_user_name","name":"W_NAME","width":"115px","class":"user_name"},
-{"field":"fn_content","name":"W_CONTENT","type":"search"},
+{"field":"fn_user_name","name":"W_NAME1","width":"115px","type":"title"},
+{"field":"fn_phone","name":"W_MOBILE","width":"115px"},
 {"field":"fn_reg_date","name":"W_DATE","width":"85px","type":"date","class":"date","responsive":"mb-hide-mobile"},
+{"field":"fn_ext1","attribute":"readonly","td_class":"text-left","name":"관심분야","width":"","type":"checkbox","data":"전당포 창업,중고명품샵,금거래소,자격증 취득 및 취미,리셀러,시계샵,병행수입,명품 감정사","label":"전당포 창업,중고명품샵,금거래소,자격증 취득 및 취미,리셀러,시계샵,병행수입,명품 감정사"},
+{"field":"fn_title","name":"W_TITLE","type":"search"},
+{"field":"fn_content","name":"W_CONTENT","type":"search"},
 {"field":"fn_hit","name":"W_HIT","width":"60px","search":"false","class":"hit","responsive":"mb-hide-mobile mb-hide-tablet"},
 {"field":"fn_tag","name":"W_TAG","type":"search"}
 ';
@@ -38,12 +40,10 @@ $desktop_model['list_calendar']		= '
 //글보기 스킨 수정
 $desktop_model['view']		= '
 {"tpl":"tag","tag_name":"table","type":"start","name":"W_VIEW_MSG","width":"20%,*","mobile_width":"80px,*","class":"table table-view"},
-{"field":"fn_title","name":"W_TITLE","width":"100px","type":"title","class":"text-left"},
 {"field":"fn_category1","name":"W_CATEGORY","width":"100px","display_check":"empty:none","type":"category1","class":"category"},
-{"field":"fn_user_name","name":"W_NAME","width":"200px","class":"user_name"},
-{"field":"fn_email","name":"W_EMAIL","width":"200px","class":""},
-{"field":"file_download","name":"W_ATTACHMENT","width":"100px","type":"file_download","class":"file-download"},
-{"field":"fn_content","name":"W_CONTENT","width":"60px","type":"content","td_class":"content-box text-left","colspan":"2"},
+{"field":"fn_ext1","name":"관심분야","width":"100%","type":"checkbox","data":"전당포 창업,중고명품샵,금거래소,자격증 취득 및 취미,리셀러,시계샵,병행수입,명품 감정사","label":"전당포 창업,중고명품샵,금거래소,자격증 취득 및 취미,리셀러,시계샵,병행수입,명품 감정사"},
+{"field":"fn_user_name","name":"W_NAME1","width":"200px","class":"user_name"},
+{"field":"fn_phone","name":"W_MOBILE","width":"100%"},
 {"tpl":"tag","tag_name":"table","type":"end"}
 ';
 
@@ -51,11 +51,9 @@ $desktop_model['view']		= '
 $desktop_model['write']		= '
 {"tpl":"tag","tag_name":"table","type":"start","name":"W_WRITE","width":"20%,*","mobile_width":"80px,*","class":"table table-write"},
 {"field":"fn_category1","name":"W_CATEGORY","width":"100%","type":"category1","class":"category"},
-{"field":"fn_user_name","name":"W_NAME","width":"100%","maxlength":"50","required":"(*)","class":"user_name","filter":"filter_admin","filter_error":"MSG_NAME_UNUSABLE"},
-{"field":"fn_email","name":"W_EMAIL","width":"100%","required":"(*)","maxlength":"250","pattern":"email","pattern_error":"MSG_EMAIL_FILTER_ERROR"},
-{"field":"fn_title","name":"W_TITLE","width":"100%","required":"(*)","class":"text-left","required_error":"MSG_FIELD_EMPTY_ERROR2","filter":"filter_swear","filter_error":"MSG_WORD_UNUSABLE"},
-{"field":"fn_content","name":"W_CONTENT","width":"100%","required":"(*)","type":"content","class":"content","td_class":"","required_error":"MSG_FIELD_EMPTY_ERROR2","filter":"filter_swear","filter_error":"MSG_WORD_UNUSABLE"},
-{"field":"fn_file1","name":"W_ATTACHMENT","width":"300px","type":"file","class":"file"},
+{"field":"fn_ext1","name":"관심분야","width":"100%","type":"checkbox","data":"전당포 창업,중고명품샵,금거래소,자격증 취득 및 취미,리셀러,시계샵,병행수입,명품 감정사","label":"전당포 창업,중고명품샵,금거래소,자격증 취득 및 취미,리셀러,시계샵,병행수입,명품 감정사"},
+{"field":"fn_user_name","name":"W_NAME1","width":"100%","maxlength":"50","required":"(*)","class":"user_name","filter":"filter_admin","filter_error":"MSG_NAME_UNUSABLE"},
+{"field":"fn_phone","name":"W_MOBILE","width":"100%","required":"(*)"},
 {"tpl":"tag","tag_name":"table","type":"end"}
 ';
 

@@ -12,34 +12,63 @@
  */
 
 ?>
-			</main><!-- #main -->
-		</div><!-- #primary -->
-	</div><!-- #content -->
+<?php if (!is_front_page()): ?>
+		</section><!-- inner -->
+	</div><!-- sub_page -->
+<?php endif; ?>
 
-	<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
+	<!-- <?php //get_template_part( 'template-parts/footer/footer-widgets' ); ?> -->
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="footer">
+		<section class="inner">
+			
+			<div class="left">
+				<div class="sns_box">
+				
+					<ul>
+						<li><a href="#"><img src="/wp-content/uploads/2024/01/instagram.png" alt="인스타그램"></a></li>
+						<li><a href="#"><img src="/wp-content/uploads/2024/01/blog.png" alt="블로그"></a></li>
+						<li><a href="#"><img src="/wp-content/uploads/2024/01/youtube.png" alt="유튜브"></a></li>
+					</ul>	
+				</div>
+		
+				<div class="address_box">
+					<ul>
+						<li>Tel.02-123-4567</li>
+						<li>Fax:02.-123.4567</li>
+						<li>Email:killdong@gmail.com</li>
+						<li>사업자 등록번호 : 123.45.6789</li>
+					</ul>
 
-		<?php if ( has_nav_menu( 'footer' ) ) : ?>
-			<nav aria-label="<?php esc_attr_e( 'Secondary menu', 'twentytwentyone' ); ?>" class="footer-navigation">
-				<ul class="footer-navigation-wrapper">
+					<ul>
+						<li>서울 서초구 서초대로 12길, 34 바른 명품 교육원</li>
+					</ul>
+
+					<p class="copyright">Copyright, 바른 명품교육원.All RIGHTS RESERVED.</p>
+
+				</div>					
+			</div>
+			
+			<div class="right">
+				<div class="footer_menu">
 					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'footer',
-							'items_wrap'     => '%3$s',
-							'container'      => false,
-							'depth'          => 1,
-							'link_before'    => '<span>',
-							'link_after'     => '</span>',
-							'fallback_cb'    => false,
-						)
-					);
+						wp_nav_menu(
+							array(
+								'theme_location'  => 'primary',
+								'container'       => '',
+								'walker'          => new Custom_Walker_Nav_Menu2,
+								'items_wrap'      => '<ul>%3$s</ul>',
+								// 'fallback_cb'     => false,
+								'before'          => '',
+								'after'           => '',
+							)
+						);
 					?>
-				</ul><!-- .footer-navigation-wrapper -->
-			</nav><!-- .footer-navigation -->
-		<?php endif; ?>
-		<div class="site-info">
+				</div>
+			</div>	
+		</section>
+
+		<!-- <div class="site-info">
 			<div class="site-name">
 				<?php if ( has_custom_logo() ) : ?>
 					<div class="site-logo"><?php the_custom_logo(); ?></div>
@@ -52,7 +81,7 @@
 						<?php endif; ?>
 					<?php endif; ?>
 				<?php endif; ?>
-			</div><!-- .site-name -->
+			</div>
 
 			<?php
 			if ( function_exists( 'the_privacy_policy_link' ) ) {
@@ -68,9 +97,9 @@
 				// 	'<a href="' . esc_url( __( 'https://wordpress.org/', 'twentytwentyone' ) ) . '">WordPress</a>'
 				// );
 				?>
-			</div><!-- .powered-by -->
+			</div>
 
-		</div><!-- .site-info -->
+		</div>.site-info -->
 	</footer><!-- #colophon -->
 
 </div><!-- #page -->

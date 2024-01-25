@@ -1,0 +1,18 @@
+[2023-12-21 08:45:32] [LOG] Creating backup 
+[2023-12-21 08:45:32] [LOG] Found 894 files to backup.
+[2023-12-21 08:45:48] [LOG] New backup created and its name is: BM_Backup_2023-12-21_08_45_28_bfCFjOwkBW3U98IG.zip
+[2024-01-16 13:36:03] [LOG] Creating backup 
+[2024-01-16 13:36:03] [LOG] Found 1131 files to backup.
+[2024-01-16 13:36:44] [LOG] New backup created and its name is: BM_Backup_2024-01-16_13_36_03_zsKSvU679CDhcNHe.zip
+[2024-01-16 13:36:45] [LOG] CLI response:
+[2024-01-16 13:36:45] [LOG] {"status":"success","filename":"BM_Backup_2024-01-16_13_36_03_zsKSvU679CDhcNHe.zip","root":"http:\/\/localhost\/wp-content\/plugins\/backup-backup\/"}
+[2024-01-18 15:27:32] [LOG] Creating backup 
+[2024-01-18 15:27:32] [LOG] Found 1132 files to backup.
+[2024-01-18 15:28:14] [LOG] New backup created and its name is: BM_Backup_2024-01-18_15_27_32_EJs0etqm1nx6bZCw.zip
+[2024-01-18 15:28:14] [LOG] CLI response:
+[2024-01-18 15:28:14] [LOG] {"status":"success","filename":"BM_Backup_2024-01-18_15_27_32_EJs0etqm1nx6bZCw.zip","root":"http:\/\/localhost\/wp-content\/plugins\/backup-backup\/"}
+[2024-01-24 15:23:28] [LOG] Creating backup 
+[2024-01-24 15:23:28] [LOG] Found 1133 files to backup.
+[2024-01-24 15:24:10] [LOG] New backup created and its name is: BM_Backup_2024-01-24_15_23_27_D5XdwaKBe4jHhN8T.zip
+[2024-01-24 15:24:10] [LOG] CLI response:
+[2024-01-24 15:24:10] [LOG] {"status":"success","filename":"BM_Backup_2024-01-24_15_23_27_D5XdwaKBe4jHhN8T.zip","root":"http:\/\/localhost\/wp-content\/plugins\/backup-backup\/"}

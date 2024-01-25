@@ -662,18 +662,20 @@ function get_breadcrumbs() {
 	$menu_items = wp_get_nav_menu_items( $menu, array( 'update_post_term_cache' => false ) );
 	_wp_menu_item_classes_by_context( $menu_items );
 	
-	echo "home";
+	echo '<ul><li class="home"><a href="#">홈</a></li>';
 	foreach( $menu_items as $item ):
 		if ( $item->current_item_parent || $item->current ):
-			echo "&gt;".$item->title;
+			echo "<li><a href='".$item->url."'>".$item->title."</a></li>";
 		endif;
 	endforeach;
+	echo '</ul>';
 }
 
 function get_siblings() {
 	$menu_name = 'primary';
 	$locations = get_nav_menu_locations();
 	$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+	$parent_id = "";
 	
 	$menu_items = wp_get_nav_menu_items( $menu, array( 'update_post_term_cache' => false ) );
 	_wp_menu_item_classes_by_context( $menu_items );
@@ -684,7 +686,12 @@ function get_siblings() {
 			$parent_id = $item->ID;
 		endif;
 		if ( $item->menu_item_parent == $parent_id ):
-			echo "<li><a href='".$item->url."'>".$item->title."</a></li>";
+			if ($item->current):
+				echo '<li class="active">';
+			else:
+				echo "<li>";
+			endif;
+			echo "<a href='".$item->url."'>".$item->title."</a></li>";
 		endif;
 	endforeach;
 	echo "</ul>";
@@ -772,3 +779,708 @@ function slideshow_custom_shortcode($atts, $content = null ) {
 			</script>';
 }
 add_shortcode( 'slideshow', 'slideshow_custom_shortcode' );
+
+
+// Add Slideshow Shortcode for WordPress
+function slideshow_custom_shortcode2($atts, $content = null ) {
+    extract( shortcode_atts( array(
+	    'plain_text_url' => 'no' // in case the urls are plain text urls, write yes in the parameter eg. [slideshow plain_text_url="yes"]plain text urls here[/slideshow]
+		,'id' => '0'
+    ), $atts ) );
+
+    // If we only have a bunch of plain text urls (no a or img tags *sigh*)
+    if($plain_text_url != 'no') {
+        global $post;
+        $doc = new DOMDocument;
+        $doc->loadHTML('<!DOCTYPE html><meta charset="UTF-8">'.get_the_content($post->ID));
+        $post_content = $doc->textContent;
+		
+        // Get only the urls in the slideshow shortcode
+        $start_test = '/\[slideshow2 id=\"'.$id.'\" plain_text_url=\"yes\"\]/';
+        $end = '[/slideshow2]';
+        $post_content = ' ' . $post_content;
+        preg_match($start_test, $post_content, $arr, PREG_OFFSET_CAPTURE);
+		$ini = $arr[0][1];
+		$start = $arr[0][0];
+		
+        if ($ini == 0) return '';
+        $ini += strlen($start);
+        $len = strpos($post_content, $end, $ini) - $ini;
+        $substring_full = substr($post_content, $ini, $len);
+
+        // Get an array of urls
+        $string_array = explode(PHP_EOL, $substring_full);
+		
+        $new_array = array();
+        foreach ($string_array as $slide) {
+			if(strlen($slide) > 1) {
+				$shortcode_pattern = get_shortcode_regex( ['slide'] );
+				if ( preg_match_all( '/' . $shortcode_pattern . '/s', $slide, $m ) ) {
+
+					// $m[3] – The shortcode argument list 
+					foreach( $m[3] as $atts_string ) {
+						$atts = shortcode_parse_atts( $atts_string );
+						$new_array[] = '<li class="swiper-slide"><div class="swiper_wrap"><a href="#"><div class="img_box"><img src="'.$atts->url.'" alt=""></div><div class="text_box">'.$atts->text.'</div></a></div></li>';
+					}
+				}
+			}
+        }
+
+        // Take over the content
+        $content = implode(PHP_EOL,$new_array);
+    }
+
+	// if(shortcode_exists('slideshow')) {
+wp_enqueue_style( 'swiper-bundle-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' );
+wp_enqueue_script( 'swiperjs', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.5', true );
+	// }
+
+    // Output the code for the gallery
+    return '<article class="swiper_wrap_all">
+				<div class="product_swiper swiper-container-initialized swiper-container-horizontal"> 
+					<ul class="swiper-wrapper">'.$content.'</ul> 
+					<!-- Add Arrows -->
+					<div class="swiper-button-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-disabled="true"><i>다음</i></div>
+					<div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"><i>이전</i></div>
+					<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+					<!-- // Add Arrows -->
+				</div>  
+			</article>
+			<script>
+				jQuery(document).ready(function($){
+					var swiper = new Swiper(".swiper-container", {
+						autoplay: {
+							delay: 5000,
+							disableOnInteraction: false
+						},
+						speed: 500,
+						loop: false,
+						pagination: {
+							el: ".swiper-pagination",
+							type: "fraction"
+						},
+						navigation: {
+							nextEl: ".swiper-button-next",
+							prevEl: ".swiper-button-prev"
+						},
+						on: {
+							init: function () {
+								$(".swiper-progress-bar").removeClass("animate");
+								$(".swiper-progress-bar").removeClass("active");
+								$(".swiper-progress-bar").eq(0).addClass("animate");
+								$(".swiper-progress-bar").eq(0).addClass("active");
+							},
+							slideChangeTransitionStart: function () {
+								$(".swiper-progress-bar").removeClass("animate");
+								$(".swiper-progress-bar").removeClass("active");
+								$(".swiper-progress-bar").eq(0).addClass("active");
+							},
+							slideChangeTransitionEnd: function () {
+								$(".swiper-progress-bar").eq(0).addClass("animate");
+							}
+						}
+					});
+					$(".swiper-container").hover(function () {
+						swiper.autoplay.stop();
+						$(".swiper-progress-bar").removeClass("animate");
+					}, function () {
+						swiper.autoplay.start();
+						$(".swiper-progress-bar").addClass("animate");
+					});
+			  });
+			</script>';
+}
+add_shortcode( 'slideshow2', 'slideshow_custom_shortcode2' );
+
+
+class Custom_Walker_Nav_Menu extends Walker_Nav_Menu {
+	public $lv = 1;
+
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$llv = sprintf('%02d', $this->lv++);
+		$output .= "\n$indent<ul class=\"sub sub_$llv\">\n";
+	}
+
+	function end_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "$indent</ul>\n";
+	}
+}
+
+class Custom_Walker_Nav_Menu2 extends Walker_Nav_Menu {
+	public $idx = 1;
+
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent\n";
+	}
+
+	function end_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "$indent\n";
+	}
+
+	function start_el( &$output, $data_object, $depth = 0, $args = array(), $current_object_id = 0 ) {
+		if ($depth == 0) {
+			if ($this->idx++ > 1) $output .= "</ul><ul>";
+			$output .= "<li><h3>$data_object->title</h3></li>";
+		} else {
+			$output .= "<li><a href='$data_object->url'>$data_object->title</a></li>";
+		}
+	}
+}
+
+class Custom_Walker_Nav_Menu3 extends Walker_Nav_Menu {
+
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent<ul class=\"children\">\n";
+	}
+
+	function end_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "$indent</ul>\n";
+	}
+
+	function start_el( &$output, $data_object, $depth = 0, $args = array(), $current_object_id = 0 ) {
+		if ($depth == 0) {
+			// if ($this->idx++ > 1) $output .= "</ul><ul>";
+			$output .= "<li class=\"has-children\">$data_object->title<span class=\"icon-arrow\"></span>";
+		} else {
+			$output .= "<li><a href='$data_object->url'>$data_object->title</a></li>";
+		}
+	}
+}
+
+
+add_shortcode("mb_latest_slide", 'mbw_create_latest_mb_slide');
+if(!function_exists('mbw_create_latest_mb_slide')){
+	function mbw_create_latest_mb_slide($args){
+		if(!empty($args['echo'])){
+			echo mbw_get_latest_mb_slide("shortcode",$args);
+		}else{
+			return mbw_get_latest_mb_slide("shortcode",$args);
+		}
+	}
+}
+
+if(!function_exists('mbw_get_latest_mb_slide')){
+	function mbw_get_latest_mb_slide($mode,$data){
+		global $mdb,$mstore,$mb_admin_tables,$mb_fields;
+		$device_type				= mbw_get_vars("device_type");
+		$widget_name			= basename(dirname(__FILE__));
+		$title_max_length		= 20;
+		if(!empty($data['maxlength'])) $title_max_length		= $data['maxlength'];
+		else if($mode=="shortcode") $title_max_length		= 40;
+		
+		if(empty($data['name'])) return;
+		else $name			= mbw_value_filter(str_replace('"',"",$data['name']),"name");
+		$post_id		= "";
+		if(strlen($name)>3){
+			if(empty($data['post_id'])){
+				$post_id	= $mdb->get_var($mdb->prepare("SELECT ".$mb_fields["board_options"]["fn_post_id"]." FROM ".$mb_admin_tables["board_options"]." where ".$mb_fields["board_options"]["fn_board_name2"]."=%s limit 1",$name));
+			}else $post_id			= mbw_value_filter($data['post_id'],"int");
+		}
+		if(empty($data['list_size'])) $list_size			= "5";
+        else $list_size			= mbw_value_filter($data['list_size'],"int");
+		if(!empty($data['list_page'])) $list_page	= intval($data['list_page'])-1;
+		else $list_page		= 0;
+		if($list_page<0) $list_page	= 0;
+		if(empty($data['title'])) $title			= "";
+        else $title			= $data['title'];
+		if(empty($data['link_type'])) $link_type			= "view";
+        else $link_type			= $data['link_type'];
+		if(!empty($data['link_target'])) $link_target	= ' target="'.mbw_value_filter($data['link_target'],"name").'"';
+        else $link_target		= "";
+		if(empty($data['use_category'])) $use_category		= "false";
+        else $use_category			= $data['use_category'];
+
+		if(empty($data['search_field'])) $search_field			= "";
+        else $search_field			= mbw_value_filter($data['search_field'],"name");
+		if(!isset($data['search_text'])) $search_text			= "";
+        else $search_text			= $data['search_text'];
+		if(empty($data['category1'])) $category1			= "";
+        else $category1			= $data['category1'];
+		if(empty($data['category2'])) $category2			= "";
+        else $category2			= $data['category2'];
+		if(empty($data['category3'])) $category3			= "";
+        else $category3			= $data['category3'];
+		if(!empty($data['date_after'])){
+			$date_after		= mbw_value_filter(trim($data['date_after']),"date1");
+			if($data['date_after']!=$date_after){		// -7 days 형태로 입력이 되었을 경우
+				$date_after		= date('Y-m-d',strtotime($data['date_after']));
+			}
+		}else $date_after = "";
+		if(!empty($data['date_before'])){
+			$date_before		= mbw_value_filter(trim($data['date_before']),"date1");
+			if($data['date_before']!=$date_before){	// -7 days 형태로 입력이 되었을 경우
+				$date_before		= date('Y-m-d',strtotime($data['date_before']));
+			}
+		}else $date_before = "";
+		if(empty($data['order_by'])) $order_by			= "pid";
+        else $order_by			= mbw_value_filter($data['order_by'],"name");
+		if(empty($data['order_type'])) $order_type			= "desc";
+        else $order_type			= mbw_value_filter($data['order_type'],"name");
+
+		if(empty($data['class'])) $div_class			= "";
+        else $div_class			= " ".esc_attr($data['class']);
+		if(empty($data['style'])) $div_style			= "";
+        else $div_style			= " style='".str_replace("'",'"',esc_attr($data['style']))."'";
+
+		$head_title_style1		= "";
+		if(!empty($data['head_title_font_size'])){
+			if(strpos($data['head_title_font_size'],'px')===false) $data['head_title_font_size']	.= "px";
+			$head_title_style1	.= 'font-size:'.mbw_value_filter($data['head_title_font_size']).' !important;';
+		}
+		if(!empty($data['head_title_font_color'])){
+			$data['head_title_font_color']		= mbw_value_filter($data['head_title_font_color'],"color");
+			if(strpos($data['head_title_font_color'],'#')!==0 && strpos($data['head_title_font_color'],'rgba(')!==0) $data['head_title_font_color']	= "#".$data['head_title_font_color'];
+			$head_title_style1	.= 'color:'.$data['head_title_font_color'].' !important;';
+		}
+		if(!empty($data['head_title_line_height'])){
+			$head_title_style1	.= 'line-height:'.mbw_value_filter($data['head_title_line_height'],"number").' !important;';
+		}
+		if(!empty($data['head_title_font_weight'])){
+			$head_title_style1	.= 'font-weight:'.mbw_value_filter($data['head_title_font_weight']).' !important;';
+		}
+		if(!empty($head_title_style1)){
+			$head_title_style1	= " style='".str_replace("'",'"',esc_attr($head_title_style1))."'";
+		}
+
+		$add_text_style1		= "";
+		if(!empty($data['title_font_size'])){
+			if(strpos($data['title_font_size'],'px')===false) $data['title_font_size']	.= "px";
+			$add_text_style1	.= 'font-size:'.mbw_value_filter($data['title_font_size']).' !important;';
+		}
+		if(!empty($data['title_font_color'])){
+			$data['title_font_color']		= mbw_value_filter($data['title_font_color'],"color");
+			if(strpos($data['title_font_color'],'#')!==0 && strpos($data['title_font_color'],'rgba(')!==0) $data['title_font_color']	= "#".$data['title_font_color'];
+			$add_text_style1	.= 'color:'.$data['title_font_color'].' !important;';
+		}
+		if(!empty($data['title_line_height'])){
+			$add_text_style1	.= 'line-height:'.mbw_value_filter($data['title_line_height'],"number").' !important;';
+		}
+		if(!empty($data['title_font_weight'])){
+			$add_text_style1	.= 'font-weight:'.mbw_value_filter($data['title_font_weight']).' !important;';
+		}
+		if(!empty($add_text_style1)){
+			$add_text_style1	= " style='".str_replace("'",'"',esc_attr($add_text_style1))."'";
+		}
+
+		$add_text_style2		= "";
+		if(!empty($data['category_font_size'])){
+			if(strpos($data['category_font_size'],'px')===false) $data['category_font_size']	.= "px";
+			$add_text_style2	.= 'font-size:'.mbw_value_filter($data['category_font_size']).' !important;';
+		}
+		if(!empty($data['category_font_color'])){
+			$data['category_font_color']		= mbw_value_filter($data['category_font_color'],"color");
+			if(strpos($data['category_font_color'],'#')!==0 && strpos($data['category_font_color'],'rgba(')!==0) $data['category_font_color']	= "#".$data['category_font_color'];
+			$add_text_style2	.= 'color:'.$data['category_font_color'].' !important;';
+		}
+		if(!empty($data['category_line_height'])){
+			$add_text_style2	.= 'line-height:'.mbw_value_filter($data['category_line_height'],"number").' !important;';
+		}
+		if(!empty($data['category_font_weight'])){
+			$add_text_style2	.= 'font-weight:'.mbw_value_filter($data['category_font_weight']).' !important;';
+		}
+		if(!empty($add_text_style2)){
+			$add_text_style2	= " style='".str_replace("'",'"',esc_attr($add_text_style2))."'";
+		}
+
+		$add_comment_style1		= "";
+		if(!empty($data['comment_font_size'])){
+			if(strpos($data['comment_font_size'],'px')===false) $data['comment_font_size']	.= "px";
+			$add_comment_style1	.= 'font-size:'.mbw_value_filter($data['comment_font_size']).' !important;';
+		}
+		if(!empty($data['comment_font_color'])){
+			$data['comment_font_color']		= mbw_value_filter($data['comment_font_color'],"color");
+			if(strpos($data['comment_font_color'],'#')!==0 && strpos($data['comment_font_color'],'rgba(')!==0) $data['comment_font_color']	= "#".$data['comment_font_color'];
+			$add_comment_style1	.= 'color:'.$data['comment_font_color'].' !important;';
+		}
+		if(!empty($data['comment_line_height'])){
+			$add_comment_style1	.= 'line-height:'.mbw_value_filter($data['comment_line_height'],"number").' !important;';
+		}
+		if(!empty($data['comment_font_weight'])){
+			$add_comment_style1	.= 'font-weight:'.mbw_value_filter($data['comment_font_weight']).' !important;';
+		}
+		if(!empty($add_comment_style1)){
+			$add_comment_style1	= " style='".str_replace("'",'"',esc_attr($add_comment_style1))."'";
+		}
+
+		//필요한 게시판 필드 이름 가져오기
+		$select_field			= array("fn_pid","fn_title","fn_content","fn_image_path","fn_category1","fn_category2","fn_category3","fn_image_path","fn_reg_date","fn_comment_count","fn_homepage");
+		if(!empty($search_field) && $search_text!="") $select_field[]			= $search_field;
+		$board_field			= $mstore->get_board_select_fields($select_field,$name);
+
+		$latest_permalink		= get_permalink($post_id);
+		if(strpos($latest_permalink, '?') === false)	$latest_permalink		.= "?";
+		else 	$latest_permalink		.= "&";
+		if(!empty($category1)) $latest_permalink		.= "category1=".$category1."&";			
+		if(!empty($category2)) $latest_permalink		.= "category2=".$category2."&";			
+		if(!empty($category3)) $latest_permalink		.= "category3=".$category3."&";			
+		if($link_type=="item"){
+			$latest_permalink		.= "item=";
+		}else{
+			$latest_permalink		.= "vid=";
+		}
+		
+		$table_name				= mbw_get_table_name($name);
+
+		$where_query				= "";
+		$where_data				= array();
+		if(!empty($date_after)){
+			$where_data[]		= $mdb->prepare($board_field["fn_reg_date"].">%s",$date_after);
+		}
+		if(!empty($date_before)){
+			$where_data[]		= $mdb->prepare($board_field["fn_reg_date"]."<%s",$date_before);
+		}
+		if(!empty($category1)){
+			if(strpos($category1, ',') !== false){
+				$category1_array		= explode(',',$category1);
+				$filter_array1			= array();
+				foreach($category1_array as $item){
+					$filter_array1[]		= $mdb->prepare($board_field["fn_category1"]."=%s", $item );
+				}
+				$where_data[]		= " (".implode( ' OR ', $filter_array1).")";
+			}else{
+				$where_data[]		= $mdb->prepare($board_field["fn_category1"]."=%s",$category1);
+			}
+		}
+		if(!empty($category2)){
+			if(strpos($category2, ',') !== false){
+				$category2_array		= explode(',',$category2);
+				$filter_array2			= array();
+				foreach($category2_array as $item){
+					$filter_array2[]		= $mdb->prepare($board_field["fn_category2"]."=%s", $item);
+				}
+				$where_data[]		= " (".implode( ' OR ', $filter_array2).")";
+			}else{
+				$where_data[]		= $mdb->prepare($board_field["fn_category2"]."=%s",$category2);
+			}
+		}
+		if(!empty($category3)){
+			if(strpos($category3, ',') !== false){
+				$category3_array		= explode(',',$category3);
+				$filter_array3			= array();
+				foreach($category3_array as $item){
+					$filter_array3[]		= $mdb->prepare($board_field["fn_category3"]."=%s", $item);
+				}
+				$where_data[]		= " (".implode( ' OR ', $filter_array3).")";
+			}else{
+				$where_data[]		= $mdb->prepare($board_field["fn_category3"]."=%s",$category3);
+			}
+		}
+		$latest_list		= array();
+		if(!empty($search_field) && $search_text!="") $where_data[] = $mdb->prepare($search_field." like %s","%".$search_text."%");
+		if(!empty($where_data)) $where_query				= " WHERE ".implode(" and ",$where_data);
+		if(strlen($name)>3){			
+			$latest_list		= $mdb->get_results("SELECT * FROM ".$table_name.$where_query." order by ".mbw_value_filter($order_by,"name")." ".mbw_value_filter($order_type,"name")." limit ".mbw_value_filter($list_page,"int").",".mbw_value_filter($list_size,"int"), ARRAY_A);
+		}
+		if(has_filter('mf_widget_latest_items')) $latest_list			= apply_filters("mf_widget_latest_items", $latest_list, $data, $where_query, $latest_permalink, $widget_name);
+
+		$latest_html	= '<article class="swiper_wrap_all">';
+		$latest_html	.= '<div class="product_swiper swiper-container-initialized swiper-container-horizontal">';
+		$latest_html	.= '<ul class="swiper-wrapper">';
+		
+		if(!empty($latest_list)){
+			foreach($latest_list as $latest_item){
+				if(!empty($latest_item['board_url'])) $latest_permalink		= $latest_item['board_url'];
+				$post_content		= mbw_htmlspecialchars_decode($latest_item[$board_field["fn_content"]]);
+				if(mb_strlen($post_content)>$title_max_length){
+					$post_content		= mb_substr($post_content, 0, $title_max_length)."...";
+				}
+				$latest_html	.= '<li class="swiper-slide">';
+				$latest_html	.= '<div class="swiper_wrap">';
+				$latest_html	.= '<a href="javascript:;">';
+
+				if(isset($data['type']) && $data['type'] == 'qna'){
+					$latest_html	.= '<div class="qna_box">';
+					$latest_html	.= '<h1>Q</h1>';
+					$latest_html	.= '<ul class="q_box">';
+					$latest_html	.= '<li>'.esc_attr($latest_item[$board_field["fn_title"]]).'</li>';
+					$latest_html	.= '</ul>';
+					$latest_html	.= '<ul class="a_box">';
+					$latest_html	.= '<li>'.$post_content.'</li>';
+					$latest_html	.= '</ul>';
+					$latest_html	.= '<p class="more"><a href="'.$latest_permalink.$latest_item[$board_field["fn_pid"]].'">더보기</a></p>';
+					$latest_html	.= '</div>';
+				} else {
+					$latest_html	.= '<div class="img_box">';
+					$latest_html	.= '<img src="'.mbw_get_image_url("url_small",$latest_item['image_path']).'" alt="시계감정" />';
+					$latest_html	.= '</div>';
+					$latest_html	.= '<div class="text_box"><ul>';
+					$latest_html	.= '<li><h3>'.esc_attr($latest_item[$board_field["fn_title"]]).'</h3></li>';
+					$latest_html	.= '<li><p>'.$post_content.'</p></li>';
+					$latest_html	.= '</ul></div>';
+				}
+				$latest_html	.= '</a>';
+				$latest_html	.= '</div>';
+				$latest_html	.= '</li>';
+			}
+		}else{
+			
+		}
+		$latest_html	.= "</ul>";
+		$latest_html	.= "<div class='swiper-button-prev swiper-button-disabled' tabindex='-1' role='button' aria-label='Previous slide' aria-disabled='true'><i>다음</i></div>";
+		$latest_html	.= "<div class='swiper-button-next' tabindex='0' role='button' aria-label='Next slide' aria-disabled='false'><i>이전</i></div>";
+		$latest_html	.= "<span class='swiper-notification' aria-live='assertive' aria-atomic='true'></span>";
+		$latest_html	.= "</div>";
+		$latest_html	.= "</article>";
+		if(has_filter('mf_widget_html')) $latest_html			= apply_filters("mf_widget_html", $latest_html, $data, $widget_name);
+		return $latest_html;
+	}
+}
+
+add_shortcode("mb_latest_video", 'mbw_create_latest_mb_video');
+if(!function_exists('mbw_create_latest_mb_video')){
+	function mbw_create_latest_mb_video($args){
+		if(!empty($args['echo'])){
+			echo mbw_get_latest_mb_video("shortcode",$args);
+		}else{
+			return mbw_get_latest_mb_video("shortcode",$args);
+		}
+	}
+}
+
+if(!function_exists('mbw_get_latest_mb_video')){
+	function mbw_get_latest_mb_video($mode,$data){
+		global $mdb,$mstore,$mb_admin_tables,$mb_fields;
+		$device_type				= mbw_get_vars("device_type");
+		$widget_name			= basename(dirname(__FILE__));
+		$title_max_length		= 20;
+		if(!empty($data['maxlength'])) $title_max_length		= $data['maxlength'];
+		else if($mode=="shortcode") $title_max_length		= 40;
+		
+		if(empty($data['name'])) return;
+		else $name			= mbw_value_filter(str_replace('"',"",$data['name']),"name");
+		$post_id		= "";
+		if(strlen($name)>3){
+			if(empty($data['post_id'])){
+				$post_id	= $mdb->get_var($mdb->prepare("SELECT ".$mb_fields["board_options"]["fn_post_id"]." FROM ".$mb_admin_tables["board_options"]." where ".$mb_fields["board_options"]["fn_board_name2"]."=%s limit 1",$name));
+			}else $post_id			= mbw_value_filter($data['post_id'],"int");
+		}
+		if(empty($data['list_size'])) $list_size			= "5";
+        else $list_size			= mbw_value_filter($data['list_size'],"int");
+		if(!empty($data['list_page'])) $list_page	= intval($data['list_page'])-1;
+		else $list_page		= 0;
+		if($list_page<0) $list_page	= 0;
+		if(empty($data['title'])) $title			= "";
+        else $title			= $data['title'];
+		if(empty($data['link_type'])) $link_type			= "view";
+        else $link_type			= $data['link_type'];
+		if(!empty($data['link_target'])) $link_target	= ' target="'.mbw_value_filter($data['link_target'],"name").'"';
+        else $link_target		= "";
+		if(empty($data['use_category'])) $use_category		= "false";
+        else $use_category			= $data['use_category'];
+
+		if(empty($data['search_field'])) $search_field			= "";
+        else $search_field			= mbw_value_filter($data['search_field'],"name");
+		if(!isset($data['search_text'])) $search_text			= "";
+        else $search_text			= $data['search_text'];
+		if(empty($data['category1'])) $category1			= "";
+        else $category1			= $data['category1'];
+		if(empty($data['category2'])) $category2			= "";
+        else $category2			= $data['category2'];
+		if(empty($data['category3'])) $category3			= "";
+        else $category3			= $data['category3'];
+		if(!empty($data['date_after'])){
+			$date_after		= mbw_value_filter(trim($data['date_after']),"date1");
+			if($data['date_after']!=$date_after){		// -7 days 형태로 입력이 되었을 경우
+				$date_after		= date('Y-m-d',strtotime($data['date_after']));
+			}
+		}else $date_after = "";
+		if(!empty($data['date_before'])){
+			$date_before		= mbw_value_filter(trim($data['date_before']),"date1");
+			if($data['date_before']!=$date_before){	// -7 days 형태로 입력이 되었을 경우
+				$date_before		= date('Y-m-d',strtotime($data['date_before']));
+			}
+		}else $date_before = "";
+		if(empty($data['order_by'])) $order_by			= "pid";
+        else $order_by			= mbw_value_filter($data['order_by'],"name");
+		if(empty($data['order_type'])) $order_type			= "desc";
+        else $order_type			= mbw_value_filter($data['order_type'],"name");
+
+		if(empty($data['class'])) $div_class			= "";
+        else $div_class			= " ".esc_attr($data['class']);
+		if(empty($data['style'])) $div_style			= "";
+        else $div_style			= " style='".str_replace("'",'"',esc_attr($data['style']))."'";
+
+		$head_title_style1		= "";
+		if(!empty($data['head_title_font_size'])){
+			if(strpos($data['head_title_font_size'],'px')===false) $data['head_title_font_size']	.= "px";
+			$head_title_style1	.= 'font-size:'.mbw_value_filter($data['head_title_font_size']).' !important;';
+		}
+		if(!empty($data['head_title_font_color'])){
+			$data['head_title_font_color']		= mbw_value_filter($data['head_title_font_color'],"color");
+			if(strpos($data['head_title_font_color'],'#')!==0 && strpos($data['head_title_font_color'],'rgba(')!==0) $data['head_title_font_color']	= "#".$data['head_title_font_color'];
+			$head_title_style1	.= 'color:'.$data['head_title_font_color'].' !important;';
+		}
+		if(!empty($data['head_title_line_height'])){
+			$head_title_style1	.= 'line-height:'.mbw_value_filter($data['head_title_line_height'],"number").' !important;';
+		}
+		if(!empty($data['head_title_font_weight'])){
+			$head_title_style1	.= 'font-weight:'.mbw_value_filter($data['head_title_font_weight']).' !important;';
+		}
+		if(!empty($head_title_style1)){
+			$head_title_style1	= " style='".str_replace("'",'"',esc_attr($head_title_style1))."'";
+		}
+
+		$add_text_style1		= "";
+		if(!empty($data['title_font_size'])){
+			if(strpos($data['title_font_size'],'px')===false) $data['title_font_size']	.= "px";
+			$add_text_style1	.= 'font-size:'.mbw_value_filter($data['title_font_size']).' !important;';
+		}
+		if(!empty($data['title_font_color'])){
+			$data['title_font_color']		= mbw_value_filter($data['title_font_color'],"color");
+			if(strpos($data['title_font_color'],'#')!==0 && strpos($data['title_font_color'],'rgba(')!==0) $data['title_font_color']	= "#".$data['title_font_color'];
+			$add_text_style1	.= 'color:'.$data['title_font_color'].' !important;';
+		}
+		if(!empty($data['title_line_height'])){
+			$add_text_style1	.= 'line-height:'.mbw_value_filter($data['title_line_height'],"number").' !important;';
+		}
+		if(!empty($data['title_font_weight'])){
+			$add_text_style1	.= 'font-weight:'.mbw_value_filter($data['title_font_weight']).' !important;';
+		}
+		if(!empty($add_text_style1)){
+			$add_text_style1	= " style='".str_replace("'",'"',esc_attr($add_text_style1))."'";
+		}
+
+		$add_text_style2		= "";
+		if(!empty($data['category_font_size'])){
+			if(strpos($data['category_font_size'],'px')===false) $data['category_font_size']	.= "px";
+			$add_text_style2	.= 'font-size:'.mbw_value_filter($data['category_font_size']).' !important;';
+		}
+		if(!empty($data['category_font_color'])){
+			$data['category_font_color']		= mbw_value_filter($data['category_font_color'],"color");
+			if(strpos($data['category_font_color'],'#')!==0 && strpos($data['category_font_color'],'rgba(')!==0) $data['category_font_color']	= "#".$data['category_font_color'];
+			$add_text_style2	.= 'color:'.$data['category_font_color'].' !important;';
+		}
+		if(!empty($data['category_line_height'])){
+			$add_text_style2	.= 'line-height:'.mbw_value_filter($data['category_line_height'],"number").' !important;';
+		}
+		if(!empty($data['category_font_weight'])){
+			$add_text_style2	.= 'font-weight:'.mbw_value_filter($data['category_font_weight']).' !important;';
+		}
+		if(!empty($add_text_style2)){
+			$add_text_style2	= " style='".str_replace("'",'"',esc_attr($add_text_style2))."'";
+		}
+
+		$add_comment_style1		= "";
+		if(!empty($data['comment_font_size'])){
+			if(strpos($data['comment_font_size'],'px')===false) $data['comment_font_size']	.= "px";
+			$add_comment_style1	.= 'font-size:'.mbw_value_filter($data['comment_font_size']).' !important;';
+		}
+		if(!empty($data['comment_font_color'])){
+			$data['comment_font_color']		= mbw_value_filter($data['comment_font_color'],"color");
+			if(strpos($data['comment_font_color'],'#')!==0 && strpos($data['comment_font_color'],'rgba(')!==0) $data['comment_font_color']	= "#".$data['comment_font_color'];
+			$add_comment_style1	.= 'color:'.$data['comment_font_color'].' !important;';
+		}
+		if(!empty($data['comment_line_height'])){
+			$add_comment_style1	.= 'line-height:'.mbw_value_filter($data['comment_line_height'],"number").' !important;';
+		}
+		if(!empty($data['comment_font_weight'])){
+			$add_comment_style1	.= 'font-weight:'.mbw_value_filter($data['comment_font_weight']).' !important;';
+		}
+		if(!empty($add_comment_style1)){
+			$add_comment_style1	= " style='".str_replace("'",'"',esc_attr($add_comment_style1))."'";
+		}
+
+		//필요한 게시판 필드 이름 가져오기
+		$select_field			= array("fn_pid","fn_title","fn_content","fn_image_path","fn_category1","fn_category2","fn_category3","fn_image_path","fn_reg_date","fn_comment_count","fn_homepage");
+		if(!empty($search_field) && $search_text!="") $select_field[]			= $search_field;
+		$board_field			= $mstore->get_board_select_fields($select_field,$name);
+
+		$latest_permalink		= get_permalink($post_id);
+		if(strpos($latest_permalink, '?') === false)	$latest_permalink		.= "?";
+		else 	$latest_permalink		.= "&";
+		if(!empty($category1)) $latest_permalink		.= "category1=".$category1."&";			
+		if(!empty($category2)) $latest_permalink		.= "category2=".$category2."&";			
+		if(!empty($category3)) $latest_permalink		.= "category3=".$category3."&";			
+		if($link_type=="item"){
+			$latest_permalink		.= "item=";
+		}else{
+			$latest_permalink		.= "vid=";
+		}
+		
+		$table_name				= mbw_get_table_name($name);
+
+		$where_query				= "";
+		$where_data				= array();
+		if(!empty($date_after)){
+			$where_data[]		= $mdb->prepare($board_field["fn_reg_date"].">%s",$date_after);
+		}
+		if(!empty($date_before)){
+			$where_data[]		= $mdb->prepare($board_field["fn_reg_date"]."<%s",$date_before);
+		}
+		if(!empty($category1)){
+			if(strpos($category1, ',') !== false){
+				$category1_array		= explode(',',$category1);
+				$filter_array1			= array();
+				foreach($category1_array as $item){
+					$filter_array1[]		= $mdb->prepare($board_field["fn_category1"]."=%s", $item );
+				}
+				$where_data[]		= " (".implode( ' OR ', $filter_array1).")";
+			}else{
+				$where_data[]		= $mdb->prepare($board_field["fn_category1"]."=%s",$category1);
+			}
+		}
+		if(!empty($category2)){
+			if(strpos($category2, ',') !== false){
+				$category2_array		= explode(',',$category2);
+				$filter_array2			= array();
+				foreach($category2_array as $item){
+					$filter_array2[]		= $mdb->prepare($board_field["fn_category2"]."=%s", $item);
+				}
+				$where_data[]		= " (".implode( ' OR ', $filter_array2).")";
+			}else{
+				$where_data[]		= $mdb->prepare($board_field["fn_category2"]."=%s",$category2);
+			}
+		}
+		if(!empty($category3)){
+			if(strpos($category3, ',') !== false){
+				$category3_array		= explode(',',$category3);
+				$filter_array3			= array();
+				foreach($category3_array as $item){
+					$filter_array3[]		= $mdb->prepare($board_field["fn_category3"]."=%s", $item);
+				}
+				$where_data[]		= " (".implode( ' OR ', $filter_array3).")";
+			}else{
+				$where_data[]		= $mdb->prepare($board_field["fn_category3"]."=%s",$category3);
+			}
+		}
+		$latest_list		= array();
+		if(!empty($search_field) && $search_text!="") $where_data[] = $mdb->prepare($search_field." like %s","%".$search_text."%");
+		if(!empty($where_data)) $where_query				= " WHERE ".implode(" and ",$where_data);
+		if(strlen($name)>3){			
+			$latest_list		= $mdb->get_results("SELECT * FROM ".$table_name.$where_query." order by ".mbw_value_filter($order_by,"name")." ".mbw_value_filter($order_type,"name")." limit ".mbw_value_filter($list_page,"int").",".mbw_value_filter($list_size,"int"), ARRAY_A);
+		}
+		if(has_filter('mf_widget_latest_items')) $latest_list			= apply_filters("mf_widget_latest_items", $latest_list, $data, $where_query, $latest_permalink, $widget_name);
+
+		$latest_html	= '<article class="video_wrap">';
+		$latest_html	.= '<ul class="flex_wrap">';
+
+		if(!empty($latest_list)){
+			foreach($latest_list as $latest_item){
+				if(!empty($latest_item['board_url'])) $latest_permalink		= $latest_item['board_url'];
+				$post_content		= mbw_htmlspecialchars_decode($latest_item[$board_field["fn_content"]]);
+				if(mb_strlen($post_content)>$title_max_length){
+					$post_content		= mb_substr($post_content, 0, $title_max_length)."...";
+				}
+
+				$latest_html	.= '<li>';
+				$latest_html	.= '<a href="'.$latest_permalink.$latest_item[$board_field["fn_pid"]].'">';
+				$latest_html	.= '<img src="'.mbw_get_image_url("url_small",$latest_item['image_path']).'" alt="'.esc_attr($latest_item[$board_field["fn_title"]]).'">';
+				$latest_html	.= '<p class="icon">아이콘</p>';
+				$latest_html	.= '</a>';
+				$latest_html	.= '</li>';
+			}
+		}else{
+			
+		}
+		$latest_html	.= '</ul>';
+		$latest_html	.= '</article>';
+		if(has_filter('mf_widget_html')) $latest_html			= apply_filters("mf_widget_html", $latest_html, $data, $widget_name);
+		return $latest_html;
+	}
+}

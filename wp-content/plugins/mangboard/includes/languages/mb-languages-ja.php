@@ -375,6 +375,7 @@ $mb_languages["W_ERROR_LOG"]	= "エラーログ";
 
 
 $mb_languages["W_NAME"]	= "名前";
+$mb_languages["W_NAME1"]	= "名前";
 
 $mb_languages["W_SING_UP"]	= "登録";
 $mb_languages["W_LAST_ACCESS_DATE"]	= "最終接続日";

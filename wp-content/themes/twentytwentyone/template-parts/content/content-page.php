@@ -9,15 +9,21 @@
  * @since Twenty Twenty-One 1.0
  */
 
+wp_enqueue_style( 'swiper-bundle-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' );
+wp_enqueue_script( 'swiperjs', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.5', true );
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<script type="text/javascript">
+	AOS.init();
+</script>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class('content'); ?> data-aos="fade-up" data-aos-easing="linear" data-aos-duration="800">
 
 	<?php if ( ! is_front_page() ) : ?>
-		<header class="entry-header alignwide">
+		<!-- <header class="entry-header alignwide">
 			<?php get_template_part( 'template-parts/header/entry-header' ); ?>
 			<?php twenty_twenty_one_post_thumbnail(); ?>
-		</header><!-- .entry-header -->
+		</header>.entry-header -->
 	<?php elseif ( has_post_thumbnail() ) : ?>
 		<header class="entry-header alignwide">
 			<?php twenty_twenty_one_post_thumbnail(); ?>

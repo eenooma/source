@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import url("main.css");
+
 /*
 Theme Name: Twenty Twenty-One
 Theme URI: https://wordpress.org/themes/twentytwentyone/
@@ -696,7 +698,7 @@ template {
 .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
 *[class*=inner-container] > *:not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
 .default-max-width {
-	max-width: var(--responsive--aligndefault-width);
+	/* max-width: var(--responsive--aligndefault-width); */
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -2622,7 +2624,7 @@ ul,
 ol {
 	font-family: var(--list--font-family);
 	margin: 0;
-	padding-left: calc(2 * var(--global--spacing-horizontal));
+	/* padding-left: calc(2 * var(--global--spacing-horizontal)); */
 }
 
 ul.aligncenter,
@@ -5888,3 +5890,4 @@ footer {
 .is-IE .post-thumbnail .wp-post-image {
 	min-width: auto;
 }
+

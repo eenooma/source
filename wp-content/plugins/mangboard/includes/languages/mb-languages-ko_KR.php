@@ -390,6 +390,7 @@ $mb_languages["W_ERROR_LOG"]	= "에러 로그";
 
 
 $mb_languages["W_NAME"]	= "이름";
+$mb_languages["W_NAME1"]	= "성함";
 
 $mb_languages["W_SING_UP"]	= "가입";
 
@@ -403,7 +404,7 @@ $mb_languages["W_COIN"]	= "코인";
 
 $mb_languages["W_DATE_OF_BIRTH"]	= "생년월일";
 
-$mb_languages["W_MOBILE"]	= "핸드폰";
+$mb_languages["W_MOBILE"]	= "연락처";
 $mb_languages["W_PHOTO"]	= "사진";
 
 $mb_languages["W_MESSENGER"]	= "메신져";
@@ -412,7 +413,7 @@ $mb_languages["W_HOMEPAGE"]	= "홈페이지";
 $mb_languages["W_BLOG"]	= "블로그";
 $mb_languages["W_HOME_ADDRESS"]	= "집 주소";
 
-$mb_languages["W_HOME_NUMBER"]	= "집 전화";
+$mb_languages["W_HOME_NUMBER"]	= "연락처";
 
 $mb_languages["W_ACCEPT_EMAIL"]	= "이메일 수신";
 

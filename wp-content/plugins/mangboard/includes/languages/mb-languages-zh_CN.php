@@ -372,6 +372,7 @@ $mb_languages["W_ERROR_LOG"]	= "错误记录";
 
 
 $mb_languages["W_NAME"]	= "姓名";
+$mb_languages["W_NAME1"]	= "姓名";
 
 $mb_languages["W_SING_UP"]	= "加入";
 $mb_languages["W_LAST_ACCESS_DATE"]	= "最后访问日";
