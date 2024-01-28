@@ -1273,6 +1273,10 @@ label {
 	margin-bottom: calc(var(--global--spacing-vertical) / 3);
 }
 
+
+
+
+
 /**
 https://css-tricks.com/custom-styling-form-inputs-with-modern-css-features/
 https://codepen.io/aaroniker/pen/ZEYoxEY by Aaron Iker.
@@ -1285,9 +1289,9 @@ License: MIT.
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		position: relative;
-		width: 25px;
-		height: 25px;
-		border: var(--form--border-width) solid var(--form--border-color);
+		width: 20px;
+		height: 20px;
+		border: 1px solid #d3d3d3; 
 		background: var(--global--color-white);
 	}
 
@@ -1315,7 +1319,7 @@ License: MIT.
 		position: absolute;
 		width: 7px;
 		height: 13px;
-		border: 3px solid var(--form--color-text);
+		border: 3px solid #f5812a;
 		border-top: 0;
 		border-left: 0;
 		transform: rotate(30deg);

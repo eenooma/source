@@ -16,3 +16,6 @@
 [2024-01-24 15:24:10] [LOG] New backup created and its name is: BM_Backup_2024-01-24_15_23_27_D5XdwaKBe4jHhN8T.zip
 [2024-01-24 15:24:10] [LOG] CLI response:
 [2024-01-24 15:24:10] [LOG] {"status":"success","filename":"BM_Backup_2024-01-24_15_23_27_D5XdwaKBe4jHhN8T.zip","root":"http:\/\/localhost\/wp-content\/plugins\/backup-backup\/"}
+[2024-01-28 12:49:39] [LOG] Site restored...
+[2024-01-28 12:49:39] [LOG] CLI response:
+[2024-01-28 12:49:39] [LOG] {"status":"success","login":"1706446171","url":"http:\/\/localhost"}

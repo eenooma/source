@@ -205,7 +205,7 @@
 .mb-board .board-list .list-search>div{display:inline-block !important;}
 .mb-board .board-list .list-search>div:after{display:none;}
 .mb-board .board-list .list-head .mb-category button{background-color:#FFF;}
-.mb-board .btn{vertical-align:top !important;width:initial;min-height:20px !important;outline: none !important;}
+.mb-board .btn{vertical-align:top !important;width:initial; /*min-height:20px !important;*/outline: none !important;}
 .mb-board button.btn-more{width:100% !important;}
 .mb-board button{vertical-align:top !important;width:initial;}
 .mb-board .bold {font-weight:bold !important;}
@@ -438,6 +438,9 @@ body.mb-mobile div.mb-error-message-box span,body.mb-mobile2 div.mb-error-messag
 
 /* responsive style end */
 
+
+.mb-responsive-box-content span { padding-left: 3px; }
+
 .mb-board .mb-layout-responsive-box .main-style1 .mb-responsive-box>div{
     display: table;
 	table-layout: fixed !important;
@@ -460,12 +463,14 @@ body.mb-mobile div.mb-error-message-box span,body.mb-mobile2 div.mb-error-messag
 	position: relative;
 	font-weight:600 !important;
 	font-size:14px !important;
-	width: 16%;
+	width: 10%;
 	padding:4px 7px 5px 15px !important;
 	-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;
 }
 .mb-board .mb-layout-responsive-box .main-style1 .mb-responsive-box .mb-responsive-box-label label{
-	font-size:14px !important;
+	font-size:15px !important;
+	color: #1f1c1c !important;
+	font-weight: 700; 
 }
 .mb-board .mb-layout-responsive-box .main-style1 .mb-responsive-box .mb-responsive-box-content{
 	display: table-cell;
@@ -529,10 +534,13 @@ body.mb-mobile div.mb-error-message-box span,body.mb-mobile2 div.mb-error-messag
 .mb-board .mb-layout-responsive-box.mb-layout-responsive-box1 .main-style1 .table .mb-responsive-box .mb-responsive-box-label{min-width:140px}
 .mb-board .mb-layout-responsive-box.mb-layout-responsive-box1 .main-style1 .mb-user-title{}
 
-.mb-board .mb-layout-responsive-box.mb-layout-responsive-box2 .main-style1 .table{border-top:1px solid #F6F6F6 !important;}
-.mb-board .mb-layout-responsive-box.mb-layout-responsive-box2 .main-style1 .table tr td{border-bottom:1px solid #F6F6F6 !important;}
-.mb-board .mb-layout-responsive-box.mb-layout-responsive-box2 .main-style1 .table .mb-responsive-box .mb-responsive-box-label{min-width:120px;padding:21px 3px 5px 7px !important;vertical-align:top !important;}
-.mb-board .mb-layout-responsive-box.mb-layout-responsive-box2 .main-style1 .table .mb-responsive-box .mb-responsive-box-content{padding:17px 5px 17px 13px !important;}
+.mb-board .mb-layout-responsive-box.mb-layout-responsive-box2 .main-style1 .table{border-top:2px solid #f5822a !important;}
+.mb-board .mb-layout-responsive-box.mb-layout-responsive-box2 .main-style1 .table tr td{border-bottom:1px solid #dbdbdb !important;}
+.mb-board .mb-layout-responsive-box.mb-layout-responsive-box2 .main-style1 .table .mb-responsive-box .mb-responsive-box-label{     min-width: 120px;
+    vertical-align: top !important;
+    line-height: 65px;
+    padding: 10px 20px 10px 20px!important; }
+.mb-board .mb-layout-responsive-box.mb-layout-responsive-box2 .main-style1 .table .mb-responsive-box .mb-responsive-box-content{padding:20px !important;}
 .mb-board .mb-layout-responsive-box.mb-layout-responsive-box2 .main-style1 .mb-user-title{}
 
 .mb-board .mb-layout-responsive-box.mb-layout-responsive-box3 .main-style1 .table{border-top:none !important;}
@@ -579,7 +587,7 @@ body.mb-mobile div.mb-error-message-box span,body.mb-mobile2 div.mb-error-messag
 }
 .mb-mobile .mb-board .mb-layout-responsive-box.mb-layout-responsive-box2 .main-style1 .table .mb-responsive-box .mb-responsive-box-label{min-width:120px;padding:13px 2px 6px 5px !important;vertical-align:top !important;}
 .mb-mobile .mb-board .mb-layout-responsive-box.mb-layout-responsive-box3 .main-style1 .table .mb-responsive-box .mb-responsive-box-label{min-width:120px;padding:15px 2px 8px 5px !important;vertical-align:top !important;}
-.mb-mobile .mb-board .mb-layout-responsive-box.mb-layout-responsive-box2 .main-style1 .table .mb-responsive-box .mb-responsive-box-content{padding:13px 5px 13px 5px !important;}
+.mb-mobile .mb-board .mb-layout-responsive-box.mb-layout-responsive-box2 .main-style1 .table .mb-responsive-box .mb-responsive-box-content{padding:20px !important;}
 .mb-mobile .mb-board .mb-layout-responsive-box.mb-layout-responsive-box3 .main-style1 .table .mb-responsive-box .mb-responsive-box-content{padding:15px 5px 15px 5px !important;}
 
 .mb-mobile .mb-board .mb-layout-responsive-box .main-style1 .mb-responsive-box>div{

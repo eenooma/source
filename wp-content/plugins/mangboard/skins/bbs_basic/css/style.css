@@ -18,7 +18,8 @@
 .mb-board label,.mb-board input,.mb-board keygen{display:inline-block !important;color:#6A6A6A !important;}
 .mb-board table input.kcaptcha{text-align:center;font-weight:bold !important;font-size:13px !important;margin-left:7px !important;padding:0 6px !important;}
 .mb-board label{padding-right:11px !important;vertical-align:middle !important;font-size:13px !important;line-height: 1.6 !important;border:none;} 
-.mb-board label:last-child{padding-right:0px !important;vertical-align:middle !important;font-size:13px !important;line-height: 1.6 !important;} 
+.mb-board label:last-child{padding-right:0px !important;vertical-align:middle !important;font-size:15px !important;line-height: 1.6 !important; 
+color: #1f1c1a!important; font-weight: 700; } 
 
 .mb-board abbr,.mb-board acronym {border: 0 !important;}
 .mb-board hr {display: none !important;}
@@ -47,8 +48,16 @@
 .mb-style1 .mb-category button{margin-left:-1px;}
 
 
+.mb-style1 table tr, .mb-style1 table tr th, .mb-style1 table tr th span, 
+.mb-style1 table tr, .mb-style1 table tr th, .mb-style1 table tr td span { color: #1f1c1a!important; font-size: 15px; padding: 0 5px 0 5px;  
+font-weight: 300!important; }
+
+
+
+
+
 /* board list style*/
-.board-list table.table-list{border-top:2px solid #dbdbdb !important;} 
+.board-list table.table-list{border-top:2px solid #f5822a !important; margin: 20px 0 20px 0; } 
 .board-list table.table-list th {text-align:center !important;padding:9px 0px 8px !important;}
 .board-list table.table-list>thead>tr>th{background-color:#FFF;border-left:0 none !important;border-right:0 none !important;}
 .board-list table.table-list td {text-align:center;padding:9px 0px 8px !important;background-color:#FFF !important;}
@@ -131,8 +140,8 @@
 
 /* view style start */
 .mb-style1 .table-view{border-top:1px solid #dbdbdb !important;} 
-.mb-style1 .table-view>tbody th {padding:12px 11px 10px 13px !important;border-right:1px solid #EFEFEF !important;background-color:#FBFBFB !important;}
-.mb-style1 .table-view>tbody td {padding:12px 11px 10px 13px !important;background-color:#FFF;}
+.mb-style1 .table-view>tbody th {padding:12px 11px 10px 13px !important;border-right:1px solid #EFEFEF !important;background-color:none !important;}
+.mb-style1 .table-view>tbody td {padding:12px 11px 10px 13px !important;background-color:none;}
 .mb-style1 .table-view>tbody td.content-box{padding:13px !important;}
 /* view style end */
 
@@ -199,7 +208,7 @@
 
 
 /* button style start */
-.mb-board div.btn-box-right {padding:11px 0 0 ;text-align:right;}
+.mb-board div.btn-box-right { padding:11px 0 0 ;text-align:right; margin: 10px 0 10px 0; }
 .mb-board div.btn-box-center {padding:11px 0 0;text-align:center;}
 .mb-board div.btn-box-left {padding:11px 0 0;text-align:left;}
 .mb-board .btn-box-left>.btn-box-right,
@@ -210,14 +219,19 @@
 
 .mb-board div a{border:none;}
 .mb-board a,.mb-board button{text-decoration:none !important;color:#6A6A6A !important;background:none;box-shadow:none !important;}
-.mb-board a:hover,.mb-board button:hover{text-decoration:none; cursor:pointer !important;color:#333 !important;background:none;}
-.mb-board button:hover{background-color:#F7F7F7 !important;}
+/*.mb-board a:hover,.mb-board button:hover{text-decoration:none; cursor:pointer !important;color:#333 !important;background:none;}
+.mb-board button:hover{background-color:#F7F7F7 !important;}*/
 
 .mb-board .btn {display:inline-block;min-width:42px;*height:30px !important;text-decoration:none !important; font-weight:bold;font-size:13px;line-height:1.4 !important;vertical-align: middle !important;}
 .mb-board .btn>span{padding:0 !important;}
-.mb-board .btn-default{margin:0;padding:5px 10px 5px;border: 1px solid #ccc;-webkit-border-radius:3px;-moz-border-radius:3px;-khtml-border-radius:3px;border-radius:3px;background-color:#F0F0F0 !important;height:30px !important;} 
-.mb-board .btn-search {margin:0;padding:5px 10px 5px !important;height:30px !important;}
+.mb-board .btn-default{margin:0; padding: 15px;  -webkit-border-radius:5px;-moz-border-radius:3px;-khtml-border-radius:3px;border-radius:5px;!important;height:30px !important;} 
+.mb-board .btn-search {margin:0;padding:5px 10px 5px !important; }
 .mb-board .btn-more {margin:6px 0 11px !important;padding:5px 0px !important;width:100%;text-align:center;height:30px !important;}
+
+
+.btn-send-write {margin:0; padding: 20px!important;  -webkit-border-radius:5px;-moz-border-radius:3px;-khtml-border-radius:3px;border-radius:5px;background-color:#f5812a !important;height:30px !important;  }
+
+.btn-send-write span { font-size: 17px!important; }
 
 /* button class
 btn-write,btn-modify,btn-reply,btn-delete,btn-list,btn-ok,btn-cancel,btn-cmt,btn-search,btn-vote-good,btn-vote-bad,btn-back,btn-sendwrite,btn-login,btn-resister,btn-lost-password
@@ -225,7 +239,7 @@ btn-write,btn-modify,btn-reply,btn-delete,btn-list,btn-ok,btn-cancel,btn-cmt,btn
 
 /* button style end */
 
-
+.mb-board .btn-default span { display: block; color: #fff; font-size: 14px; line-height: 1px;  }
 
 
 

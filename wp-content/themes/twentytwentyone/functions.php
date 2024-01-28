@@ -1192,7 +1192,7 @@ if(!function_exists('mbw_get_latest_mb_slide')){
 				}
 				$latest_html	.= '<li class="swiper-slide">';
 				$latest_html	.= '<div class="swiper_wrap">';
-				$latest_html	.= '<a href="javascript:;">';
+				$latest_html	.= '<a href="'.$latest_permalink.$latest_item[$board_field["fn_pid"]].'">';
 
 				if(isset($data['type']) && $data['type'] == 'qna'){
 					$latest_html	.= '<div class="qna_box">';
@@ -1211,7 +1211,7 @@ if(!function_exists('mbw_get_latest_mb_slide')){
 					$latest_html	.= '</div>';
 					$latest_html	.= '<div class="text_box"><ul>';
 					$latest_html	.= '<li><h3>'.esc_attr($latest_item[$board_field["fn_title"]]).'</h3></li>';
-					$latest_html	.= '<li><p>'.$post_content.'</p></li>';
+					$latest_html	.= '<li><p></p></li>';
 					$latest_html	.= '</ul></div>';
 				}
 				$latest_html	.= '</a>';

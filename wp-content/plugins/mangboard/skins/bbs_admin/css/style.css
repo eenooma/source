@@ -48,7 +48,7 @@
 
 
 /* board list style*/
-.board-list table.table-list{border-top:2px solid #dbdbdb !important;} 
+.board-list table.table-list{border-top:2px solid #f5822a!important; margin: 20px 0 20px 0; } 
 .board-list table.table-list th {text-align:center !important;padding:9px 0px 8px !important;}
 .board-list table.table-list>thead>tr>th{background-color:#FFF;border-left:0 none !important;border-right:0 none !important;}
 .board-list table.table-list td {text-align:center;padding:9px 0px 8px !important;background-color:#FFF !important;}
@@ -67,15 +67,23 @@
 /* open box style end */
 
 /* gallery list style*/
-.gallery-list .gallery-list-head{border-top:2px solid #dbdbdb !important;padding-bottom:6px !important;} 
-.gallery-list .gallery-list-foot{border-bottom:2px solid #dbdbdb !important;padding-top:16px !important;} 
+.gallery-list .gallery-list-head{ /*border-top:2px solid #dbdbdb !important;padding-bottom:6px !important;*/} 
+.gallery-list .gallery-list-foot{ /*border-bottom:2px solid #dbdbdb !important;padding-top:16px !important;*/ } 
 
-.gallery-list .gallery-list-body .gallery-item-box{padding:13px 7px 0 7px !important;}
-.gallery-list .gallery-list-body .gallery-item-img{text-align:center !important;padding:9px !important;margin-bottom:3px !important;border: 1px solid #DDD !important;background-color:#FFF;}
-.gallery-list .gallery-list-body .gallery-title {text-align:left;padding:2px 0 0px 10px;font-size:14px !important;font-weight:600;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;line-height:1.5 !important;min-height:23px;}
-.gallery-list .gallery-list-body .gallery-date {text-align:left;font-size:10px;padding-left:3px;color:#AAA;line-height:1.5 !important;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
-.gallery-list .gallery-list-body .gallery-date span{font-size:12px;padding:0 7px;}
-.gallery-list .gallery-list-body .gallery-name {text-align:left;padding-left:10px;font-size:13px !important;color:#999;line-height:1.5 !important;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+.gallery-list .gallery-list-body .gallery-item-box{padding:13px 7px 0 7px !important; }
+.gallery-list .gallery-list-body .gallery-item-img{text-align:center !important; /*padding:9px !important;*/ margin-bottom:3px !important; /*border: 1px solid #DDD !important;background-color:#FFF;*/   }
+
+
+.gallery-item-wrap { background: #fff!important; }
+
+
+.gallery-list .gallery-list-body .gallery-item-img .img {  border-top-left-radius: 10px;  border-top-right-radius: 10px; height: 250px!important;  }
+
+
+.gallery-list .gallery-list-body .gallery-title {text-align:left;padding:10px 15px 0 15px;font-size:14px !important;font-weight:600;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;line-height:1.5 !important;min-height:23px;}
+.gallery-list .gallery-list-body .gallery-date {text-align:left;font-size:10px; padding: 2px 15px 0 11px; color:#AAA;line-height:1.5 !important;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+.gallery-list .gallery-list-body .gallery-date span{font-size:14px; }
+.gallery-list .gallery-list-body .gallery-name {text-align:left; font-size:13px !important;color:#999;line-height:1.5 !important;text-overflow:ellipsis;overflow:hidden;white-space:nowrap; padding: 5px 10px 10px 15px;}
 .gallery-list .gallery-list-body .cmt-count {font-size:11px;color:#AAA;}
 
 /* calendar list style*/
@@ -131,8 +139,8 @@
 
 /* view style start */
 .mb-style1 .table-view{border-top:1px solid #dbdbdb !important;} 
-.mb-style1 .table-view>tbody th {padding:12px 11px 10px 13px !important;border-right:1px solid #EFEFEF !important;background-color:#FBFBFB !important;}
-.mb-style1 .table-view>tbody td {padding:12px 11px 10px 13px !important;background-color:#FFF;}
+.mb-style1 .table-view>tbody th {padding:12px 11px 10px 13px !important;border-right:1px solid #EFEFEF !important;background-color:none !important;}
+.mb-style1 .table-view>tbody td {padding:12px 11px 10px 13px !important;background-color:none!important;}
 .mb-style1 .table-view>tbody td.content-box{padding:13px !important;}
 /* view style end */
 
