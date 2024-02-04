@@ -49,7 +49,7 @@ $mb_options				= array("locale"=>$mb_locale,		//ko_KR, en_US   (DB에서 설정 
 										"use_write_button"=>1,
 										"use_view_button"=>1,
 										"use_view_comment"=>1,
-										"use_view_prev_next"=>1,
+										"use_view_prev_next"=>0,
 										"write_next_page"=>"list",				// 글쓰기 이후에 이동할 페이지 : list(글목록), wirte(등록 알림 팝업창, Reload)
 										//모델 파일에서 수정하는 옵션 : end
 										

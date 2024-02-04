@@ -185,11 +185,11 @@ if(!function_exists('mbw_get_pagination_template')){
 				}
 							
 				$template_page	.= '<div class="pagination-large"><table cellspacing="0" cellpadding="0" border="0" class="table table-page" align="center"><tbody><tr>';
-				$template_page	.= '<td'.$page_class["pprev"].'>'.mbw_get_btn_template(array("name"=>"First",$link_type=>$page_link["pprev"],"img"=>MBW_SKIN_URL."images/btn_paging_pprev.gif","class"=>"btn-start","img_style"=>"width:15px;")).'</td>';
-				$template_page	.= '<td'.$page_class["prev"].'>'.mbw_get_btn_template(array("name"=>"Prev",$link_type=>$page_link["prev"],"img"=>MBW_SKIN_URL."images/btn_paging_prev.gif","class"=>"btn-prev","img_style"=>"width:15px;")).'</td>';
+				$template_page	.= '<td'.$page_class["pprev"].'>'.mbw_get_btn_template(array("name"=>"First",$link_type=>$page_link["pprev"],"img"=>MBW_SKIN_URL."images/btn_paging_pprev.png","class"=>"btn-start","img_style"=>"width:15px;")).'</td>';
+				$template_page	.= '<td'.$page_class["prev"].'>'.mbw_get_btn_template(array("name"=>"Prev",$link_type=>$page_link["prev"],"img"=>MBW_SKIN_URL."images/btn_paging_prev.png","class"=>"btn-prev","img_style"=>"width:15px;")).'</td>';
 				$template_page	.= $link_page;
-				$template_page	.= '<td'.$page_class["next"].'>'.mbw_get_btn_template(array("name"=>"Next",$link_type=>$page_link["next"],"img"=>MBW_SKIN_URL."images/btn_paging_next.gif","class"=>"btn-next","img_style"=>"width:15px;")).'</td>';
-				$template_page	.= '<td'.$page_class["nnext"].'>'.mbw_get_btn_template(array("name"=>"Last",$link_type=>$page_link["nnext"],"img"=>MBW_SKIN_URL."images/btn_paging_nnext.gif","class"=>"btn-end","img_style"=>"width:15px;")).'</td>';
+				$template_page	.= '<td'.$page_class["next"].'>'.mbw_get_btn_template(array("name"=>"Next",$link_type=>$page_link["next"],"img"=>MBW_SKIN_URL."images/btn_paging_next.png","class"=>"btn-next","img_style"=>"width:15px;")).'</td>';
+				$template_page	.= '<td'.$page_class["nnext"].'>'.mbw_get_btn_template(array("name"=>"Last",$link_type=>$page_link["nnext"],"img"=>MBW_SKIN_URL."images/btn_paging_nnext.png","class"=>"btn-end","img_style"=>"width:15px;")).'</td>';
 				$template_page	.= '</tr></tbody></table></div>';
 			
 
@@ -253,11 +253,11 @@ if(!function_exists('mbw_get_pagination_template')){
 				}
 
 				$template_page	.= '<nav><ul class="pagination">';
-				$template_page	.= '<li'.$page_class["pprev"].'>'.mbw_get_btn_template(array("name"=>"First","href"=>$page_link["pprev"],"img"=>MBW_SKIN_URL."images/btn_paging_pprev.gif","class"=>"btn-start","img_style"=>"width:15px;")).'</li>';
-				$template_page	.= '<li'.$page_class["prev"].'>'.mbw_get_btn_template(array("name"=>"Prev","href"=>$page_link["prev"],"img"=>MBW_SKIN_URL."images/btn_paging_prev.gif","class"=>"btn-prev","img_style"=>"width:15px;")).'</li>';
+				$template_page	.= '<li'.$page_class["pprev"].'>'.mbw_get_btn_template(array("name"=>"First","href"=>$page_link["pprev"],"img"=>MBW_SKIN_URL."images/btn_paging_pprev.png","class"=>"btn-start","img_style"=>"width:15px;")).'</li>';
+				$template_page	.= '<li'.$page_class["prev"].'>'.mbw_get_btn_template(array("name"=>"Prev","href"=>$page_link["prev"],"img"=>MBW_SKIN_URL."images/btn_paging_prev.png","class"=>"btn-prev","img_style"=>"width:15px;")).'</li>';
 				$template_page	.= $link_page;
-				$template_page	.= '<li'.$page_class["next"].'>'.mbw_get_btn_template(array("name"=>"Next","href"=>$page_link["next"],"img"=>MBW_SKIN_URL."images/btn_paging_next.gif","class"=>"btn-next","img_style"=>"width:15px;")).'</li>';
-				$template_page	.= '<li'.$page_class["nnext"].'>'.mbw_get_btn_template(array("name"=>"Last".$total_count,"href"=>$page_link["nnext"],"img"=>MBW_SKIN_URL."images/btn_paging_nnext.gif","class"=>"btn-end","img_style"=>"width:15px;")).'</li>';
+				$template_page	.= '<li'.$page_class["next"].'>'.mbw_get_btn_template(array("name"=>"Next","href"=>$page_link["next"],"img"=>MBW_SKIN_URL."images/btn_paging_next.png","class"=>"btn-next","img_style"=>"width:15px;")).'</li>';
+				$template_page	.= '<li'.$page_class["nnext"].'>'.mbw_get_btn_template(array("name"=>"Last".$total_count,"href"=>$page_link["nnext"],"img"=>MBW_SKIN_URL."images/btn_paging_nnext.png","class"=>"btn-end","img_style"=>"width:15px;")).'</li>';
 				$template_page	.= '</ul><nav>';
 			}
 		}

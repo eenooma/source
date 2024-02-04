@@ -183,7 +183,7 @@ if(mbw_is_login()) echo '<input type="password" autocomplete="off" style="displa
 				echo '</div>';
 
 				if(intval(mbw_get_board_option("fn_".mbw_get_param("board_action")."_level")) <= $mb_user_level || (mbw_get_param("board_action")=="modify" && mbw_is_user_pid())){
-					echo mbw_get_btn_template(array("name"=>"Send_".ucfirst(mbw_get_param("board_action")),"onclick"=>"checkWriteData()","class"=>"btn btn-default btn-send-write"));
+					echo mbw_get_btn_template(array("name"=>"Send_".ucfirst(mbw_get_param("board_action")),"onclick"=>"checkWriteData()","class"=>"btn btn-default btn-send-write btn_registration"));
 				}
 				echo mbw_get_right_button("write");
 				
