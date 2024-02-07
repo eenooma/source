@@ -175,8 +175,8 @@ if(!function_exists('mbw_board_skin_form_add_button')){
 	function mbw_board_skin_form_add_button(){
 		if(mbw_get_param("mode")=='write' && mbw_get_param("board_action")=='write'){
 			mbw_set_option("use_write_button",false);
-			echo '<input type="checkbox" id="chk-policy"><label for="chk-policy">개인정보처리방침에 동의합니다</label><button type="button" class="btn-search popmake-457">보기</button>';
-			echo '<div class="btn-box-center">'.mbw_get_btn_template(array("name"=>"W_FORM_SUBMIT","onclick"=>"checkWriteData()","class"=>"btn btn-default btn-send-write btn_registration")).'</div>';
+			echo '<input type="checkbox" id="chk-policy"><label for="chk-policy">개인정보처리방침에 동의합니다</label><button type="button" class="btn-search popmake-452">보기</button>';
+			echo '<div class="btn-box-center">'.mbw_get_btn_template(array("name"=>"W_FORM_SUBMIT","onclick"=>"checkWriteData()","class"=>"btn btn-default btn-send-write  btn_registration")).'</div>';
 		}
 	}
 }

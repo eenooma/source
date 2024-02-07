@@ -215,7 +215,7 @@
 
 .mb-board .btn {display:inline-block;min-width:42px;*height:30px !important;text-decoration:none !important; font-weight:bold;font-size:13px;line-height:1.4 !important;vertical-align: middle !important;}
 .mb-board .btn>span{padding:0 !important;}
-.mb-board .btn-default{margin:0;padding:5px 10px 5px;border: 1px solid #ccc;-webkit-border-radius:3px;-moz-border-radius:3px;-khtml-border-radius:3px;border-radius:3px;background-color:#F0F0F0 !important;height:30px !important;} 
+.mb-board .btn-default{margin:0;padding:5px 10px 5px;border: 1px solid #ccc;-webkit-border-radius:3px;-moz-border-radius:3px;-khtml-border-radius:3px;border-radius:3px;/*background-color:#F0F0F0 !important*/;height:30px !important;} 
 .mb-board .btn-search {margin:0;padding:5px 10px 5px !important;height:30px !important;}
 .mb-board .btn-more {margin:6px 0 11px !important;padding:5px 0px !important;width:100%;text-align:center;height:30px !important;}
 
