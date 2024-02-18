@@ -1,432 +1,444 @@
-[STEP] [2024-02-07 15:15:03] Initializing restore process
-[STEP] [2024-02-07 15:15:03] Looking for PHP CLI executable file.
-[INFO] [2024-02-07 15:15:03] PHP CLI Filename: php
-[INFO] [2024-02-07 15:15:03] PHP CLI Version: 8.0.28 (cli)
-[INFO] [2024-02-07 15:15:03] PHP CLI Memory limit: 128M/512M
-[INFO] [2024-02-07 15:15:03] PHP CLI Execution limit: 0/0
-[SUCCESS] [2024-02-07 15:15:03] We properly detected PHP CLI executable file.
-[SUCCESS] [2024-02-07 15:15:04] [CLI] PHP CLI: Restore process initialized, restoring...
-[SUCCESS] [2024-02-07 15:15:04] [CLI] Restore process responded
-[SUCCESS] [2024-02-07 15:15:04] [CLI] Locking migration process
-[STEP] [2024-02-07 15:15:04] [CLI] Initializing restore process
-[INFO] [2024-02-07 15:15:04] [CLI] Backup & Migration version: 1.4.1
-[INFO] [2024-02-07 15:15:04] [CLI] Initializing custom error handler
-[INFO] [2024-02-07 15:15:04] [CLI] Site which will be restored: http://localhost
-[INFO] [2024-02-07 15:15:04] [CLI] PHP Version: 8.0.28
-[INFO] [2024-02-07 15:15:04] [CLI] WP Version: 6.4.2
-[INFO] [2024-02-07 15:15:04] [CLI] MySQL Version: 10.6.4
-[INFO] [2024-02-07 15:15:04] [CLI] MySQL Max Length: 16777216
-[INFO] [2024-02-07 15:15:04] [CLI] Web server: Not available
-[INFO] [2024-02-07 15:15:04] [CLI] Max execution time (in seconds): 259200
-[INFO] [2024-02-07 15:15:04] [CLI] Memory limit (server): 128M
-[INFO] [2024-02-07 15:15:04] [CLI] Memory limit (wp-config): 40M
-[INFO] [2024-02-07 15:15:04] [CLI] Memory limit (wp-config admin): 256M
-[SUCCESS] [2024-02-07 15:15:04] [CLI] Restore process initialized successfully.
-[STEP] [2024-02-07 15:15:04] [CLI] Free space checking...
-[INFO] [2024-02-07 15:15:04] [CLI] Checking if there is enough amount of free space
-[INFO] [2024-02-07 15:15:04] [CLI] Requires at least 191536375 bytes. [182.66 MB]
-[INFO] [2024-02-07 15:15:04] [CLI] Disk free space function is not disabled - using it...
-[INFO] [2024-02-07 15:15:04] [CLI] Checking this path/partition: /var/www/html/wp-content/backup-migration-yRLtr8eoYZ/backups
-[SUCCESS] [2024-02-07 15:15:04] [CLI] There is 65,088.17 MB free. [63.56 GB]
-[SUCCESS] [2024-02-07 15:15:04] [CLI] Great! We have enough space.
-[SUCCESS] [2024-02-07 15:15:04] [CLI] Confirmed, there is enough space on the device, checked: 191536375 bytes.
-[INFO] [2024-02-07 15:15:04] [CLI] Making temporary directory
-[STEP] [2024-02-07 15:15:04] [CLI] Scanning archive...
-[INFO] [2024-02-07 15:15:04] [CLI] Scan found 2035 files inside the backup.
-[STEP] [2024-02-07 15:15:04] [CLI] Smart memory calculation...
-[INFO] [2024-02-07 15:15:04] [CLI] There is 384 MBs of memory to use
-[SUCCESS] [2024-02-07 15:15:04] [CLI] Setting the safe limit to 62 MB
-[STEP] [2024-02-07 15:15:04] [CLI] Extracting files into temporary directory (this process can take some time)...
-[SUCCESS] [2024-02-07 15:15:09] [CLI] Files extracted...
-[STEP] [2024-02-07 15:15:09] [CLI] Saving wp-config file...
-[SUCCESS] [2024-02-07 15:15:09] [CLI] File wp-config saved
-[STEP] [2024-02-07 15:15:09] [CLI] Getting backup manifest...
-[SUCCESS] [2024-02-07 15:15:09] [CLI] Manifest loaded
-[INFO] [2024-02-07 15:15:09] [CLI] Backup Migration version used for that backup: 1.4.1
-[STEP] [2024-02-07 15:15:09] [CLI] Restoring files (this process may take a while)...
-[INFO] [2024-02-07 15:15:10] [CLI] File replacement progress: 500/1990 (25%)
-[INFO] [2024-02-07 15:15:10] [CLI] File replacement progress: 1000/1990 (50%)
-[INFO] [2024-02-07 15:15:10] [CLI] File replacement progress: 1500/1990 (75%)
-[INFO] [2024-02-07 15:15:11] [CLI] File replacement progress: 1990/1990 (100%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] All files restored successfully.
-[STEP] [2024-02-07 15:15:11] [CLI] Validating table prefix...
-[INFO] [2024-02-07 15:15:11] [CLI] Table prefix in manifest: wp_
-[INFO] [2024-02-07 15:15:11] [CLI] Detected table prefix: wp_
-[INFO] [2024-02-07 15:15:11] [CLI] Splitting process is disabled because v3 restore engine is enabled.
-[STEP] [2024-02-07 15:15:11] [CLI] Checking the database structure...
-[INFO] [2024-02-07 15:15:11] [CLI] Successfully detected backup created with v3 engine, importing...
-[STEP] [2024-02-07 15:15:11] [CLI] Restoring database (using v4 engine)...
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_access_ip 1/42 (2.38%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_access_ip: 1/2 (50.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_access_ip: 2/2 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_access_ip restoration took 0.13783 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_analytics 2/42 (4.76%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_analytics: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_analytics: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_analytics: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_analytics restoration took 0.16580 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_bbs_faq 3/42 (7.14%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_bbs_faq: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_bbs_faq: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_bbs_faq: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_bbs_faq restoration took 0.19606 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_bbs_faq_comment 4/42 (9.52%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_bbs_faq_comment: 1/2 (50.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_bbs_faq_comment: 2/2 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_bbs_faq_comment restoration took 0.21187 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_boards 5/42 (11.90%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_boards: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_boards: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_boards: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_boards restoration took 0.23607 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_cookies 6/42 (14.29%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_cookies: 1/2 (50.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_cookies: 2/2 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_cookies restoration took 0.25160 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_edu_list 7/42 (16.67%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_edu_list: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_edu_list: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_edu_list: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_edu_list restoration took 0.27991 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_edu_list_comment 8/42 (19.05%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_edu_list_comment: 1/2 (50.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_edu_list_comment: 2/2 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_edu_list_comment restoration took 0.29604 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_edu_review 9/42 (21.43%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_edu_review: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_edu_review: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_edu_review: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_edu_review restoration took 0.32273 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_edu_review_comment 10/42 (23.81%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_edu_review_comment: 1/2 (50.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_edu_review_comment: 2/2 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_edu_review_comment restoration took 0.33885 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_edu_status 11/42 (26.19%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_edu_status: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_edu_status: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_edu_status: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_edu_status restoration took 0.36576 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_edu_status_comment 12/42 (28.57%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_edu_status_comment: 1/2 (50.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_edu_status_comment: 2/2 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_edu_status_comment restoration took 0.38211 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_files 13/42 (30.95%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_files: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_files: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_files: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_files restoration took 0.40955 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_h_editors 14/42 (33.33%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_h_editors: 1/2 (50.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_h_editors: 2/2 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_h_editors restoration took 0.42586 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_logs 15/42 (35.71%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_logs: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_logs: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_logs: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_logs restoration took 0.44515 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_meta 16/42 (38.10%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_meta: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_meta: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_meta: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_meta restoration took 0.46242 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_notice 17/42 (40.48%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_notice: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_notice: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_notice: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_notice restoration took 0.48998 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_notice_comment 18/42 (42.86%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_notice_comment: 1/2 (50.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_notice_comment: 2/2 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_notice_comment restoration took 0.50523 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_options 19/42 (45.24%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_options: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_options: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_options: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_options restoration took 0.52538 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_question 20/42 (47.62%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_question: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_question: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_question: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_question restoration took 0.55136 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_question_comment 21/42 (50.00%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_question_comment: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_question_comment: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_question_comment: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_question_comment restoration took 0.56887 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_referers 22/42 (52.38%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_referers: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_referers: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_referers: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_referers restoration took 0.58786 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_register 23/42 (54.76%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_register: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_register: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_register: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_register restoration took 0.61590 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_register_comment 24/42 (57.14%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_register_comment: 1/2 (50.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_register_comment: 2/2 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_register_comment restoration took 0.63140 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of mb_users 25/42 (59.52%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_users: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_users: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of mb_users: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table mb_users restoration took 0.65098 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of wp_commentmeta 26/42 (61.90%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_commentmeta: 1/2 (50.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_commentmeta: 2/2 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table wp_commentmeta restoration took 0.66458 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of wp_comments 27/42 (64.29%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_comments: 1/2 (50.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_comments: 2/2 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table wp_comments restoration took 0.67950 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of wp_links 28/42 (66.67%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_links: 1/2 (50.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_links: 2/2 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table wp_links restoration took 0.69228 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of wp_options 29/42 (69.05%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_options: 1/4 (25.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_options: 2/4 (50.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_options: 3/4 (75.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_options: 4/4 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table wp_options restoration took 0.77373 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of wp_postmeta 30/42 (71.43%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_postmeta: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_postmeta: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_postmeta: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table wp_postmeta restoration took 0.80040 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of wp_posts 31/42 (73.81%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_posts: 1/5 (20.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_posts: 2/5 (40.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_posts: 3/5 (60.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_posts: 4/5 (80.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_posts: 5/5 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table wp_posts restoration took 0.91551 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of wp_term_relationships 32/42 (76.19%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_term_relationships: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_term_relationships: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_term_relationships: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table wp_term_relationships restoration took 0.93268 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of wp_term_taxonomy 33/42 (78.57%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_term_taxonomy: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_term_taxonomy: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_term_taxonomy: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table wp_term_taxonomy restoration took 0.94820 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of wp_termmeta 34/42 (80.95%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_termmeta: 1/2 (50.00%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_termmeta: 2/2 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table wp_termmeta restoration took 0.96275 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of wp_terms 35/42 (83.33%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_terms: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_terms: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_terms: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table wp_terms restoration took 0.97878 seconds
-[STEP] [2024-02-07 15:15:11] [CLI] Started restoration of wp_usermeta 36/42 (85.71%) table
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_usermeta: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_usermeta: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:11] [CLI] Progress of wp_usermeta: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:11] [CLI] Table wp_usermeta restoration took 0.99916 seconds
-[STEP] [2024-02-07 15:15:12] [CLI] Started restoration of wp_users 37/42 (88.10%) table
-[INFO] [2024-02-07 15:15:12] [CLI] Progress of wp_users: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:12] [CLI] Progress of wp_users: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:12] [CLI] Progress of wp_users: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:12] [CLI] Table wp_users restoration took 0.01586 seconds
-[STEP] [2024-02-07 15:15:12] [CLI] Started restoration of wp_yoast_indexable 38/42 (90.48%) table
-[INFO] [2024-02-07 15:15:12] [CLI] Cleaning up contents of wp_yoast_indexable table.
-[INFO] [2024-02-07 15:15:12] [CLI] Progress of wp_yoast_indexable: 1/2 (50.00%)
-[SUCCESS] [2024-02-07 15:15:12] [CLI] Table wp_yoast_indexable restoration took 0.03190 seconds
-[STEP] [2024-02-07 15:15:12] [CLI] Started restoration of wp_yoast_indexable_hierarchy 39/42 (92.86%) table
-[INFO] [2024-02-07 15:15:12] [CLI] Progress of wp_yoast_indexable_hierarchy: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:12] [CLI] Progress of wp_yoast_indexable_hierarchy: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:12] [CLI] Progress of wp_yoast_indexable_hierarchy: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:12] [CLI] Table wp_yoast_indexable_hierarchy restoration took 0.04925 seconds
-[STEP] [2024-02-07 15:15:12] [CLI] Started restoration of wp_yoast_migrations 40/42 (95.24%) table
-[INFO] [2024-02-07 15:15:12] [CLI] Progress of wp_yoast_migrations: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:12] [CLI] Progress of wp_yoast_migrations: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:12] [CLI] Progress of wp_yoast_migrations: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:12] [CLI] Table wp_yoast_migrations restoration took 0.06460 seconds
-[STEP] [2024-02-07 15:15:12] [CLI] Started restoration of wp_yoast_primary_term 41/42 (97.62%) table
-[INFO] [2024-02-07 15:15:12] [CLI] Progress of wp_yoast_primary_term: 1/2 (50.00%)
-[INFO] [2024-02-07 15:15:12] [CLI] Progress of wp_yoast_primary_term: 2/2 (100.00%)
-[SUCCESS] [2024-02-07 15:15:12] [CLI] Table wp_yoast_primary_term restoration took 0.07807 seconds
-[STEP] [2024-02-07 15:15:12] [CLI] Started restoration of wp_yoast_seo_links 42/42 (100.00%) table
-[INFO] [2024-02-07 15:15:12] [CLI] Progress of wp_yoast_seo_links: 1/3 (33.33%)
-[INFO] [2024-02-07 15:15:12] [CLI] Progress of wp_yoast_seo_links: 2/3 (66.67%)
-[INFO] [2024-02-07 15:15:12] [CLI] Progress of wp_yoast_seo_links: 3/3 (100.00%)
-[SUCCESS] [2024-02-07 15:15:12] [CLI] Table wp_yoast_seo_links restoration took 0.09374 seconds
-[VERBOSE] [2024-02-07 15:15:12] [CLI] Previous detected domain: baleunacademy.com
-[VERBOSE] [2024-02-07 15:15:12] [CLI] Previous detected domain parsed: baleunacademy.com
-[VERBOSE] [2024-02-07 15:15:12] [CLI] New detected domain: localhost
-[VERBOSE] [2024-02-07 15:15:12] [CLI] SSL: http://
-[VERBOSE] [2024-02-07 15:15:12] [CLI] Previous ABSPATH: /hosting/baleunacademy/html/
-[VERBOSE] [2024-02-07 15:15:12] [CLI] New detected ABSPATH: /var/www/html/
-[STEP] [2024-02-07 15:15:12] [CLI] Performing Search & Replace
-[INFO] [2024-02-07 15:15:12] [CLI] Page size for that restoration: 50
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 1/42: 1707318766_mb_access_ip (2.38%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 2/42: 1707318766_mb_analytics (4.76%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 3/42: 1707318766_mb_bbs_faq (7.14%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 4/42: 1707318766_mb_bbs_faq_comment (9.52%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 5/42: 1707318766_mb_boards (11.90%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 6/42: 1707318766_mb_cookies (14.29%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 7/42: 1707318766_mb_edu_list (16.67%)
-[INFO] [2024-02-07 15:15:12] [CLI] Batch for domain (variant D) adjustments (1/1) updated: 4 fields.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 8/42: 1707318766_mb_edu_list_comment (19.05%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 9/42: 1707318766_mb_edu_review (21.43%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 10/42: 1707318766_mb_edu_review_comment (23.81%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 11/42: 1707318766_mb_edu_status (26.19%)
-[INFO] [2024-02-07 15:15:12] [CLI] Batch for domain (variant D) adjustments (1/1) updated: 2 fields.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 12/42: 1707318766_mb_edu_status_comment (28.57%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 13/42: 1707318766_mb_files (30.95%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 14/42: 1707318766_mb_h_editors (33.33%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 15/42: 1707318766_mb_logs (35.71%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 16/42: 1707318766_mb_meta (38.10%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 17/42: 1707318766_mb_notice (40.48%)
-[INFO] [2024-02-07 15:15:12] [CLI] Batch for domain (variant D) adjustments (1/1) updated: 2 fields.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 18/42: 1707318766_mb_notice_comment (42.86%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 19/42: 1707318766_mb_options (45.24%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 20/42: 1707318766_mb_question (47.62%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 21/42: 1707318766_mb_question_comment (50.00%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 22/42: 1707318766_mb_referers (52.38%)
-[INFO] [2024-02-07 15:15:12] [CLI] Batch for domain (variant B) adjustments (1/1) updated: 45 fields.
-[INFO] [2024-02-07 15:15:12] [CLI] Batch for domain (variant E) adjustments (1/1) updated: 45 fields.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 23/42: 1707318766_mb_register (54.76%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 24/42: 1707318766_mb_register_comment (57.14%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 25/42: 1707318766_mb_users (59.52%)
-[INFO] [2024-02-07 15:15:12] [CLI] Batch for domain (variant D) adjustments (1/1) updated: 1 fields.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 26/42: 1707318766_wp_commentmeta (61.90%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 27/42: 1707318766_wp_comments (64.29%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 28/42: 1707318766_wp_links (66.67%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 29/42: 1707318766_wp_options (69.05%)
-[INFO] [2024-02-07 15:15:12] [CLI] Batch for path adjustment (1/1) updated: 2 fields.
-[INFO] [2024-02-07 15:15:12] [CLI] Batch for domain (variant D) adjustments (1/1) updated: 3 fields.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 30/42: 1707318766_wp_postmeta (71.43%)
-[INFO] [2024-02-07 15:15:12] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:12] [CLI] Performing database adjustments for table 31/42: 1707318766_wp_posts (73.81%)
-[INFO] [2024-02-07 15:15:12] [CLI] Batch for domain (variant D) adjustments (1/10) updated: 50 fields.
-[INFO] [2024-02-07 15:15:12] [CLI] Batch for domain (variant D) adjustments (2/10) updated: 50 fields.
-[INFO] [2024-02-07 15:15:12] [CLI] Batch for domain (variant D) adjustments (3/10) updated: 50 fields.
-[INFO] [2024-02-07 15:15:12] [CLI] Batch for domain (variant D) adjustments (4/10) updated: 50 fields.
-[INFO] [2024-02-07 15:15:12] [CLI] Batch for domain (variant D) adjustments (5/10) updated: 50 fields.
-[INFO] [2024-02-07 15:15:12] [CLI] Batch for domain (variant D) adjustments (6/10) updated: 50 fields.
-[INFO] [2024-02-07 15:15:12] [CLI] Batch for domain (variant D) adjustments (7/10) updated: 50 fields.
-[INFO] [2024-02-07 15:15:13] [CLI] Batch for domain (variant D) adjustments (8/10) updated: 50 fields.
-[INFO] [2024-02-07 15:15:13] [CLI] Batch for domain (variant D) adjustments (9/10) updated: 50 fields.
-[INFO] [2024-02-07 15:15:13] [CLI] Batch for domain (variant D) adjustments (10/10) updated: 21 fields.
-[STEP] [2024-02-07 15:15:13] [CLI] Performing database adjustments for table 32/42: 1707318766_wp_term_relationships (76.19%)
-[INFO] [2024-02-07 15:15:13] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:13] [CLI] Performing database adjustments for table 33/42: 1707318766_wp_term_taxonomy (78.57%)
-[INFO] [2024-02-07 15:15:13] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:13] [CLI] Performing database adjustments for table 34/42: 1707318766_wp_termmeta (80.95%)
-[INFO] [2024-02-07 15:15:13] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:13] [CLI] Performing database adjustments for table 35/42: 1707318766_wp_terms (83.33%)
-[INFO] [2024-02-07 15:15:13] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:13] [CLI] Performing database adjustments for table 36/42: 1707318766_wp_usermeta (85.71%)
-[INFO] [2024-02-07 15:15:13] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:13] [CLI] Performing database adjustments for table 37/42: 1707318766_wp_users (88.10%)
-[INFO] [2024-02-07 15:15:13] [CLI] Batch for domain (variant D) adjustments (1/1) updated: 1 fields.
-[STEP] [2024-02-07 15:15:13] [CLI] Performing database adjustments for table 38/42: 1707318766_wp_yoast_indexable (90.48%)
-[INFO] [2024-02-07 15:15:13] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:13] [CLI] Performing database adjustments for table 39/42: 1707318766_wp_yoast_indexable_hierarchy (92.86%)
-[INFO] [2024-02-07 15:15:13] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:13] [CLI] Performing database adjustments for table 40/42: 1707318766_wp_yoast_migrations (95.24%)
-[INFO] [2024-02-07 15:15:13] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:13] [CLI] Performing database adjustments for table 41/42: 1707318766_wp_yoast_primary_term (97.62%)
-[INFO] [2024-02-07 15:15:13] [CLI] Adjustments are not required for this table.
-[STEP] [2024-02-07 15:15:13] [CLI] Performing database adjustments for table 42/42: 1707318766_wp_yoast_seo_links (100.00%)
-[INFO] [2024-02-07 15:15:13] [CLI] Batch for domain (variant D) adjustments (1/1) updated: 5 fields.
-[SUCCESS] [2024-02-07 15:15:13] [CLI] Search & Replace finished successfully.
-[SUCCESS] [2024-02-07 15:15:13] [CLI] Database restored
-[STEP] [2024-02-07 15:15:13] [CLI] Performing table replacement
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_access_ip renamed to mb_access_ip
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_analytics renamed to mb_analytics
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_bbs_faq renamed to mb_bbs_faq
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_bbs_faq_comment renamed to mb_bbs_faq_comment
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_boards renamed to mb_boards
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_cookies renamed to mb_cookies
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_edu_list renamed to mb_edu_list
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_edu_list_comment renamed to mb_edu_list_comment
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_edu_review renamed to mb_edu_review
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_edu_review_comment renamed to mb_edu_review_comment
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_edu_status renamed to mb_edu_status
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_edu_status_comment renamed to mb_edu_status_comment
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_files renamed to mb_files
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_h_editors renamed to mb_h_editors
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_logs renamed to mb_logs
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_meta renamed to mb_meta
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_notice renamed to mb_notice
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_notice_comment renamed to mb_notice_comment
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_options renamed to mb_options
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_question renamed to mb_question
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_question_comment renamed to mb_question_comment
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_referers renamed to mb_referers
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_register renamed to mb_register
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_register_comment renamed to mb_register_comment
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_mb_users renamed to mb_users
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_wp_commentmeta renamed to wp_commentmeta
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_wp_comments renamed to wp_comments
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_wp_links renamed to wp_links
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_wp_options renamed to wp_options
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_wp_postmeta renamed to wp_postmeta
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_wp_posts renamed to wp_posts
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_wp_term_relationships renamed to wp_term_relationships
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_wp_term_taxonomy renamed to wp_term_taxonomy
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_wp_termmeta renamed to wp_termmeta
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_wp_terms renamed to wp_terms
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_wp_usermeta renamed to wp_usermeta
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_wp_users renamed to wp_users
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_wp_yoast_indexable renamed to wp_yoast_indexable
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_wp_yoast_indexable_hierarchy renamed to wp_yoast_indexable_hierarchy
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_wp_yoast_migrations renamed to wp_yoast_migrations
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_wp_yoast_primary_term renamed to wp_yoast_primary_term
-[INFO] [2024-02-07 15:15:13] [CLI] Table 1707318766_wp_yoast_seo_links renamed to wp_yoast_seo_links
-[SUCCESS] [2024-02-07 15:15:13] [CLI] All tables replaced
-[VERBOSE] [2024-02-07 15:15:13] [CLI] Detected table prefix: wp_
-[VERBOSE] [2024-02-07 15:15:13] [CLI] Forwarded table prefix: wp_
-[VERBOSE] [2024-02-07 15:15:13] [CLI] Manifest table prefix: wp_
-[STEP] [2024-02-07 15:15:13] [CLI] Restoring wp-config file...
-[SUCCESS] [2024-02-07 15:15:13] [CLI] WP-Config restored
-[STEP] [2024-02-07 15:15:13] [CLI] Enabling plugins included in the backup
-[VERBOSE] [2024-02-07 15:15:13] [CLI] Detected version WP/PHP for plugin: mangboard/mangboard.php, is (4.0.0/5.5.1)
-[VERBOSE] [2024-02-07 15:15:13] [CLI] Detected version WP/PHP for plugin: popup-maker/popup-maker.php, is (4.9/5.6)
-[INFO] [2024-02-07 15:15:13] [CLI] Plugin popup-maker/popup-maker.php enabled successfully.
-[VERBOSE] [2024-02-07 15:15:13] [CLI] Detected version WP/PHP for plugin: mangboard/mangboard.php, is (4.0.0/5.5.1)
-[INFO] [2024-02-07 15:15:13] [CLI] Plugin mangboard/mangboard.php enabled successfully.
-[VERBOSE] [2024-02-07 15:15:13] [CLI] Detected version WP/PHP for plugin: backup-backup/backup-backup.php, is (4.6/5.6)
-[INFO] [2024-02-07 15:15:13] [CLI] Plugin backup-backup/backup-backup.php enabled successfully.
-[VERBOSE] [2024-02-07 15:15:13] [CLI] Detected version WP/PHP for plugin: options-for-twenty-twenty-one/options-for-twenty-twenty-one.php, is (4.6/5.6)
-[INFO] [2024-02-07 15:15:13] [CLI] Plugin options-for-twenty-twenty-one/options-for-twenty-twenty-one.php enabled successfully.
-[SUCCESS] [2024-02-07 15:15:13] [CLI] All plugins enabled, you are ready to go :)
-[SUCCESS] [2024-02-07 15:15:13] [CLI] Database restored
-[STEP] [2024-02-07 15:15:13] [CLI] Making new login session
-[SUCCESS] [2024-02-07 15:15:13] [CLI] User should be logged in
-[STEP] [2024-02-07 15:15:13] [CLI] Cleaning temporary files...
-[INFO] [2024-02-07 15:15:13] [CLI] Removing 305 files
-[SUCCESS] [2024-02-07 15:15:14] [CLI] Temporary files cleaned
-[INFO] [2024-02-07 15:15:14] [CLI] Restore process took: 10 seconds.
-[SUCCESS] [2024-02-07 15:15:14] [CLI] Restore process completed
-[STEP] [2024-02-07 15:15:14] [CLI] Finalizing restored files
-[INFO] [2024-02-07 15:15:14] [CLI] Unlocking migration
-[END-CODE] [2024-02-07 15:15:14] [CLI] #001
+[STEP] [2024-02-18 12:44:27] Initializing restore process
+[STEP] [2024-02-18 12:44:28] Looking for PHP CLI executable file.
+[INFO] [2024-02-18 12:44:28] PHP CLI Filename: php
+[INFO] [2024-02-18 12:44:28] PHP CLI Version: 8.0.28 (cli)
+[INFO] [2024-02-18 12:44:28] PHP CLI Memory limit: 128M/512M
+[INFO] [2024-02-18 12:44:28] PHP CLI Execution limit: 0/0
+[SUCCESS] [2024-02-18 12:44:28] We properly detected PHP CLI executable file.
+[SUCCESS] [2024-02-18 12:44:28] [CLI] PHP CLI: Restore process initialized, restoring...
+[SUCCESS] [2024-02-18 12:44:28] [CLI] Restore process responded
+[SUCCESS] [2024-02-18 12:44:28] [CLI] Locking migration process
+[STEP] [2024-02-18 12:44:28] [CLI] Initializing restore process
+[INFO] [2024-02-18 12:44:28] [CLI] Backup & Migration version: 1.4.1
+[INFO] [2024-02-18 12:44:28] [CLI] Initializing custom error handler
+[INFO] [2024-02-18 12:44:28] [CLI] Site which will be restored: http://localhost
+[INFO] [2024-02-18 12:44:28] [CLI] PHP Version: 8.0.28
+[INFO] [2024-02-18 12:44:28] [CLI] WP Version: 6.4.2
+[INFO] [2024-02-18 12:44:28] [CLI] MySQL Version: 10.6.4
+[INFO] [2024-02-18 12:44:28] [CLI] MySQL Max Length: 16777216
+[INFO] [2024-02-18 12:44:28] [CLI] Web server: Not available
+[INFO] [2024-02-18 12:44:28] [CLI] Max execution time (in seconds): 259200
+[INFO] [2024-02-18 12:44:28] [CLI] Memory limit (server): 128M
+[INFO] [2024-02-18 12:44:28] [CLI] Memory limit (wp-config): 40M
+[INFO] [2024-02-18 12:44:28] [CLI] Memory limit (wp-config admin): 256M
+[SUCCESS] [2024-02-18 12:44:28] [CLI] Restore process initialized successfully.
+[STEP] [2024-02-18 12:44:28] [CLI] Free space checking...
+[INFO] [2024-02-18 12:44:28] [CLI] Checking if there is enough amount of free space
+[INFO] [2024-02-18 12:44:28] [CLI] Requires at least 242179782 bytes. [230.96 MB]
+[INFO] [2024-02-18 12:44:28] [CLI] Disk free space function is not disabled - using it...
+[INFO] [2024-02-18 12:44:28] [CLI] Checking this path/partition: /var/www/html/wp-content/backup-migration-yRLtr8eoYZ/backups
+[SUCCESS] [2024-02-18 12:44:28] [CLI] There is 66,242.66 MB free. [64.69 GB]
+[SUCCESS] [2024-02-18 12:44:28] [CLI] Great! We have enough space.
+[SUCCESS] [2024-02-18 12:44:28] [CLI] Confirmed, there is enough space on the device, checked: 242179782 bytes.
+[INFO] [2024-02-18 12:44:28] [CLI] Making temporary directory
+[STEP] [2024-02-18 12:44:28] [CLI] Scanning archive...
+[INFO] [2024-02-18 12:44:29] [CLI] Scan found 2155 files inside the backup.
+[STEP] [2024-02-18 12:44:29] [CLI] Smart memory calculation...
+[INFO] [2024-02-18 12:44:29] [CLI] There is 384 MBs of memory to use
+[SUCCESS] [2024-02-18 12:44:29] [CLI] Setting the safe limit to 62 MB
+[STEP] [2024-02-18 12:44:29] [CLI] Extracting files into temporary directory (this process can take some time)...
+[SUCCESS] [2024-02-18 12:44:34] [CLI] Files extracted...
+[STEP] [2024-02-18 12:44:34] [CLI] Saving wp-config file...
+[SUCCESS] [2024-02-18 12:44:34] [CLI] File wp-config saved
+[STEP] [2024-02-18 12:44:34] [CLI] Getting backup manifest...
+[SUCCESS] [2024-02-18 12:44:34] [CLI] Manifest loaded
+[INFO] [2024-02-18 12:44:34] [CLI] Backup Migration version used for that backup: 1.4.1
+[STEP] [2024-02-18 12:44:34] [CLI] Restoring files (this process may take a while)...
+[INFO] [2024-02-18 12:44:35] [CLI] File replacement progress: 500/2109 (23%)
+[INFO] [2024-02-18 12:44:35] [CLI] File replacement progress: 1000/2109 (47%)
+[INFO] [2024-02-18 12:44:35] [CLI] File replacement progress: 1500/2109 (71%)
+[INFO] [2024-02-18 12:44:36] [CLI] File replacement progress: 2000/2109 (94%)
+[INFO] [2024-02-18 12:44:36] [CLI] File replacement progress: 2109/2109 (100%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] All files restored successfully.
+[STEP] [2024-02-18 12:44:36] [CLI] Validating table prefix...
+[INFO] [2024-02-18 12:44:36] [CLI] Table prefix in manifest: wp_
+[INFO] [2024-02-18 12:44:36] [CLI] Detected table prefix: wp_
+[INFO] [2024-02-18 12:44:36] [CLI] Splitting process is disabled because v3 restore engine is enabled.
+[STEP] [2024-02-18 12:44:36] [CLI] Checking the database structure...
+[INFO] [2024-02-18 12:44:36] [CLI] Successfully detected backup created with v3 engine, importing...
+[STEP] [2024-02-18 12:44:36] [CLI] Restoring database (using v4 engine)...
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_access_ip 1/43 (2.33%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_access_ip: 1/2 (50.00%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_access_ip: 2/2 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_access_ip restoration took 0.40678 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_analytics 2/43 (4.65%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_analytics: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_analytics: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_analytics: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_analytics restoration took 0.42713 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_bbs_faq 3/43 (6.98%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_bbs_faq: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_bbs_faq: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_bbs_faq: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_bbs_faq restoration took 0.45588 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_bbs_faq_comment 4/43 (9.30%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_bbs_faq_comment: 1/2 (50.00%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_bbs_faq_comment: 2/2 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_bbs_faq_comment restoration took 0.47144 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_boards 5/43 (11.63%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_boards: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_boards: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_boards: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_boards restoration took 0.49290 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_cookies 6/43 (13.95%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_cookies: 1/2 (50.00%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_cookies: 2/2 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_cookies restoration took 0.50812 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_edu_list 7/43 (16.28%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_edu_list: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_edu_list: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_edu_list: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_edu_list restoration took 0.53326 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_edu_list_comment 8/43 (18.60%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_edu_list_comment: 1/2 (50.00%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_edu_list_comment: 2/2 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_edu_list_comment restoration took 0.54840 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_edu_review 9/43 (20.93%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_edu_review: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_edu_review: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_edu_review: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_edu_review restoration took 0.57550 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_edu_review_comment 10/43 (23.26%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_edu_review_comment: 1/2 (50.00%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_edu_review_comment: 2/2 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_edu_review_comment restoration took 0.58986 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_edu_status 11/43 (25.58%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_edu_status: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_edu_status: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_edu_status: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_edu_status restoration took 0.61947 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_edu_status_comment 12/43 (27.91%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_edu_status_comment: 1/2 (50.00%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_edu_status_comment: 2/2 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_edu_status_comment restoration took 0.64127 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_files 13/43 (30.23%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_files: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_files: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_files: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_files restoration took 0.66788 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_h_editors 14/43 (32.56%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_h_editors: 1/2 (50.00%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_h_editors: 2/2 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_h_editors restoration took 0.68385 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_logs 15/43 (34.88%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_logs: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_logs: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_logs: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_logs restoration took 0.70371 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_meta 16/43 (37.21%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_meta: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_meta: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_meta: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_meta restoration took 0.72042 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_notice 17/43 (39.53%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_notice: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_notice: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_notice: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_notice restoration took 0.74799 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_notice_comment 18/43 (41.86%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_notice_comment: 1/2 (50.00%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_notice_comment: 2/2 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_notice_comment restoration took 0.76361 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_options 19/43 (44.19%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_options: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_options: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_options: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_options restoration took 0.78359 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_question 20/43 (46.51%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_question: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_question: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_question: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_question restoration took 0.81332 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_question_comment 21/43 (48.84%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_question_comment: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_question_comment: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_question_comment: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_question_comment restoration took 0.83497 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_referers 22/43 (51.16%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_referers: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_referers: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_referers: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_referers restoration took 0.85707 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_register 23/43 (53.49%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_register: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_register: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_register: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_register restoration took 0.88330 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_register_comment 24/43 (55.81%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_register_comment: 1/2 (50.00%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_register_comment: 2/2 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_register_comment restoration took 0.89682 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of mb_users 25/43 (58.14%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_users: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_users: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of mb_users: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table mb_users restoration took 0.91669 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of wp_commentmeta 26/43 (60.47%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of wp_commentmeta: 1/2 (50.00%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of wp_commentmeta: 2/2 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table wp_commentmeta restoration took 0.92993 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of wp_comments 27/43 (62.79%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of wp_comments: 1/2 (50.00%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of wp_comments: 2/2 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table wp_comments restoration took 0.94563 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of wp_links 28/43 (65.12%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of wp_links: 1/2 (50.00%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of wp_links: 2/2 (100.00%)
+[SUCCESS] [2024-02-18 12:44:36] [CLI] Table wp_links restoration took 0.95847 seconds
+[STEP] [2024-02-18 12:44:36] [CLI] Started restoration of wp_options 29/43 (67.44%) table
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of wp_options: 1/5 (20.00%)
+[INFO] [2024-02-18 12:44:36] [CLI] Progress of wp_options: 2/5 (40.00%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_options: 3/5 (60.00%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_options: 4/5 (80.00%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_options: 5/5 (100.00%)
+[SUCCESS] [2024-02-18 12:44:37] [CLI] Table wp_options restoration took 1.05824 seconds
+[STEP] [2024-02-18 12:44:37] [CLI] Started restoration of wp_postmeta 30/43 (69.77%) table
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_postmeta: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_postmeta: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_postmeta: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:37] [CLI] Table wp_postmeta restoration took 0.08540 seconds
+[STEP] [2024-02-18 12:44:37] [CLI] Started restoration of wp_posts 31/43 (72.09%) table
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_posts: 1/5 (20.00%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_posts: 2/5 (40.00%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_posts: 3/5 (60.00%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_posts: 4/5 (80.00%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_posts: 5/5 (100.00%)
+[SUCCESS] [2024-02-18 12:44:37] [CLI] Table wp_posts restoration took 0.21705 seconds
+[STEP] [2024-02-18 12:44:37] [CLI] Started restoration of wp_pum_subscribers 32/43 (74.42%) table
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_pum_subscribers: 1/2 (50.00%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_pum_subscribers: 2/2 (100.00%)
+[SUCCESS] [2024-02-18 12:44:37] [CLI] Table wp_pum_subscribers restoration took 0.22982 seconds
+[STEP] [2024-02-18 12:44:37] [CLI] Started restoration of wp_term_relationships 33/43 (76.74%) table
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_term_relationships: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_term_relationships: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_term_relationships: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:37] [CLI] Table wp_term_relationships restoration took 0.24591 seconds
+[STEP] [2024-02-18 12:44:37] [CLI] Started restoration of wp_term_taxonomy 34/43 (79.07%) table
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_term_taxonomy: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_term_taxonomy: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_term_taxonomy: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:37] [CLI] Table wp_term_taxonomy restoration took 0.26194 seconds
+[STEP] [2024-02-18 12:44:37] [CLI] Started restoration of wp_termmeta 35/43 (81.40%) table
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_termmeta: 1/2 (50.00%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_termmeta: 2/2 (100.00%)
+[SUCCESS] [2024-02-18 12:44:37] [CLI] Table wp_termmeta restoration took 0.27534 seconds
+[STEP] [2024-02-18 12:44:37] [CLI] Started restoration of wp_terms 36/43 (83.72%) table
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_terms: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_terms: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_terms: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:37] [CLI] Table wp_terms restoration took 0.29136 seconds
+[STEP] [2024-02-18 12:44:37] [CLI] Started restoration of wp_usermeta 37/43 (86.05%) table
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_usermeta: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_usermeta: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_usermeta: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:37] [CLI] Table wp_usermeta restoration took 0.31093 seconds
+[STEP] [2024-02-18 12:44:37] [CLI] Started restoration of wp_users 38/43 (88.37%) table
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_users: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_users: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_users: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:37] [CLI] Table wp_users restoration took 0.33106 seconds
+[STEP] [2024-02-18 12:44:37] [CLI] Started restoration of wp_yoast_indexable 39/43 (90.70%) table
+[INFO] [2024-02-18 12:44:37] [CLI] Cleaning up contents of wp_yoast_indexable table.
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_yoast_indexable: 1/2 (50.00%)
+[SUCCESS] [2024-02-18 12:44:37] [CLI] Table wp_yoast_indexable restoration took 0.34982 seconds
+[STEP] [2024-02-18 12:44:37] [CLI] Started restoration of wp_yoast_indexable_hierarchy 40/43 (93.02%) table
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_yoast_indexable_hierarchy: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_yoast_indexable_hierarchy: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_yoast_indexable_hierarchy: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:37] [CLI] Table wp_yoast_indexable_hierarchy restoration took 0.36698 seconds
+[STEP] [2024-02-18 12:44:37] [CLI] Started restoration of wp_yoast_migrations 41/43 (95.35%) table
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_yoast_migrations: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_yoast_migrations: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_yoast_migrations: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:37] [CLI] Table wp_yoast_migrations restoration took 0.38257 seconds
+[STEP] [2024-02-18 12:44:37] [CLI] Started restoration of wp_yoast_primary_term 42/43 (97.67%) table
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_yoast_primary_term: 1/2 (50.00%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_yoast_primary_term: 2/2 (100.00%)
+[SUCCESS] [2024-02-18 12:44:37] [CLI] Table wp_yoast_primary_term restoration took 0.39635 seconds
+[STEP] [2024-02-18 12:44:37] [CLI] Started restoration of wp_yoast_seo_links 43/43 (100.00%) table
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_yoast_seo_links: 1/3 (33.33%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_yoast_seo_links: 2/3 (66.67%)
+[INFO] [2024-02-18 12:44:37] [CLI] Progress of wp_yoast_seo_links: 3/3 (100.00%)
+[SUCCESS] [2024-02-18 12:44:37] [CLI] Table wp_yoast_seo_links restoration took 0.41505 seconds
+[VERBOSE] [2024-02-18 12:44:37] [CLI] Previous detected domain: baleunacademy.com
+[VERBOSE] [2024-02-18 12:44:37] [CLI] Previous detected domain parsed: baleunacademy.com
+[VERBOSE] [2024-02-18 12:44:37] [CLI] New detected domain: localhost
+[VERBOSE] [2024-02-18 12:44:37] [CLI] SSL: http://
+[VERBOSE] [2024-02-18 12:44:37] [CLI] Previous ABSPATH: /hosting/baleunacademy/html/
+[VERBOSE] [2024-02-18 12:44:37] [CLI] New detected ABSPATH: /var/www/html/
+[STEP] [2024-02-18 12:44:37] [CLI] Performing Search & Replace
+[INFO] [2024-02-18 12:44:37] [CLI] Page size for that restoration: 50
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 1/43: 1708260167_mb_access_ip (2.33%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 2/43: 1708260167_mb_analytics (4.65%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 3/43: 1708260167_mb_bbs_faq (6.98%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 4/43: 1708260167_mb_bbs_faq_comment (9.30%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 5/43: 1708260167_mb_boards (11.63%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 6/43: 1708260167_mb_cookies (13.95%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 7/43: 1708260167_mb_edu_list (16.28%)
+[INFO] [2024-02-18 12:44:37] [CLI] Batch for domain (variant D) adjustments (1/1) updated: 4 fields.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 8/43: 1708260167_mb_edu_list_comment (18.60%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 9/43: 1708260167_mb_edu_review (20.93%)
+[INFO] [2024-02-18 12:44:37] [CLI] Batch for domain (variant D) adjustments (1/1) updated: 6 fields.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 10/43: 1708260167_mb_edu_review_comment (23.26%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 11/43: 1708260167_mb_edu_status (25.58%)
+[INFO] [2024-02-18 12:44:37] [CLI] Batch for domain (variant D) adjustments (1/1) updated: 13 fields.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 12/43: 1708260167_mb_edu_status_comment (27.91%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 13/43: 1708260167_mb_files (30.23%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 14/43: 1708260167_mb_h_editors (32.56%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 15/43: 1708260167_mb_logs (34.88%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 16/43: 1708260167_mb_meta (37.21%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 17/43: 1708260167_mb_notice (39.53%)
+[INFO] [2024-02-18 12:44:37] [CLI] Batch for domain (variant D) adjustments (1/1) updated: 3 fields.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 18/43: 1708260167_mb_notice_comment (41.86%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 19/43: 1708260167_mb_options (44.19%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 20/43: 1708260167_mb_question (46.51%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 21/43: 1708260167_mb_question_comment (48.84%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 22/43: 1708260167_mb_referers (51.16%)
+[INFO] [2024-02-18 12:44:37] [CLI] Batch for domain (variant B) adjustments (1/2) updated: 50 fields.
+[INFO] [2024-02-18 12:44:37] [CLI] Batch for domain (variant B) adjustments (2/2) updated: 1 fields.
+[INFO] [2024-02-18 12:44:37] [CLI] Batch for domain (variant E) adjustments (1/2) updated: 50 fields.
+[INFO] [2024-02-18 12:44:37] [CLI] Batch for domain (variant E) adjustments (2/2) updated: 1 fields.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 23/43: 1708260167_mb_register (53.49%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 24/43: 1708260167_mb_register_comment (55.81%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 25/43: 1708260167_mb_users (58.14%)
+[INFO] [2024-02-18 12:44:37] [CLI] Batch for domain (variant D) adjustments (1/1) updated: 1 fields.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 26/43: 1708260167_wp_commentmeta (60.47%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 27/43: 1708260167_wp_comments (62.79%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 28/43: 1708260167_wp_links (65.12%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 29/43: 1708260167_wp_options (67.44%)
+[INFO] [2024-02-18 12:44:37] [CLI] Batch for path adjustment (1/1) updated: 2 fields.
+[INFO] [2024-02-18 12:44:37] [CLI] Batch for domain (variant D) adjustments (1/1) updated: 3 fields.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 30/43: 1708260167_wp_postmeta (69.77%)
+[INFO] [2024-02-18 12:44:37] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:37] [CLI] Performing database adjustments for table 31/43: 1708260167_wp_posts (72.09%)
+[INFO] [2024-02-18 12:44:38] [CLI] Batch for domain (variant D) adjustments (1/11) updated: 50 fields.
+[INFO] [2024-02-18 12:44:38] [CLI] Batch for domain (variant D) adjustments (2/11) updated: 50 fields.
+[INFO] [2024-02-18 12:44:38] [CLI] Batch for domain (variant D) adjustments (3/11) updated: 50 fields.
+[INFO] [2024-02-18 12:44:38] [CLI] Batch for domain (variant D) adjustments (4/11) updated: 50 fields.
+[INFO] [2024-02-18 12:44:38] [CLI] Batch for domain (variant D) adjustments (5/11) updated: 50 fields.
+[INFO] [2024-02-18 12:44:38] [CLI] Batch for domain (variant D) adjustments (6/11) updated: 50 fields.
+[INFO] [2024-02-18 12:44:38] [CLI] Batch for domain (variant D) adjustments (7/11) updated: 50 fields.
+[INFO] [2024-02-18 12:44:38] [CLI] Batch for domain (variant D) adjustments (8/11) updated: 50 fields.
+[INFO] [2024-02-18 12:44:38] [CLI] Batch for domain (variant D) adjustments (9/11) updated: 50 fields.
+[INFO] [2024-02-18 12:44:38] [CLI] Batch for domain (variant D) adjustments (10/11) updated: 50 fields.
+[INFO] [2024-02-18 12:44:38] [CLI] Batch for domain (variant D) adjustments (11/11) updated: 34 fields.
+[STEP] [2024-02-18 12:44:38] [CLI] Performing database adjustments for table 32/43: 1708260167_wp_pum_subscribers (74.42%)
+[INFO] [2024-02-18 12:44:38] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:38] [CLI] Performing database adjustments for table 33/43: 1708260167_wp_term_relationships (76.74%)
+[INFO] [2024-02-18 12:44:38] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:38] [CLI] Performing database adjustments for table 34/43: 1708260167_wp_term_taxonomy (79.07%)
+[INFO] [2024-02-18 12:44:38] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:38] [CLI] Performing database adjustments for table 35/43: 1708260167_wp_termmeta (81.40%)
+[INFO] [2024-02-18 12:44:38] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:38] [CLI] Performing database adjustments for table 36/43: 1708260167_wp_terms (83.72%)
+[INFO] [2024-02-18 12:44:38] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:38] [CLI] Performing database adjustments for table 37/43: 1708260167_wp_usermeta (86.05%)
+[INFO] [2024-02-18 12:44:38] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:38] [CLI] Performing database adjustments for table 38/43: 1708260167_wp_users (88.37%)
+[INFO] [2024-02-18 12:44:38] [CLI] Batch for domain (variant D) adjustments (1/1) updated: 1 fields.
+[STEP] [2024-02-18 12:44:38] [CLI] Performing database adjustments for table 39/43: 1708260167_wp_yoast_indexable (90.70%)
+[INFO] [2024-02-18 12:44:38] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:38] [CLI] Performing database adjustments for table 40/43: 1708260167_wp_yoast_indexable_hierarchy (93.02%)
+[INFO] [2024-02-18 12:44:38] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:38] [CLI] Performing database adjustments for table 41/43: 1708260167_wp_yoast_migrations (95.35%)
+[INFO] [2024-02-18 12:44:38] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:38] [CLI] Performing database adjustments for table 42/43: 1708260167_wp_yoast_primary_term (97.67%)
+[INFO] [2024-02-18 12:44:38] [CLI] Adjustments are not required for this table.
+[STEP] [2024-02-18 12:44:38] [CLI] Performing database adjustments for table 43/43: 1708260167_wp_yoast_seo_links (100.00%)
+[INFO] [2024-02-18 12:44:38] [CLI] Batch for domain (variant D) adjustments (1/1) updated: 5 fields.
+[SUCCESS] [2024-02-18 12:44:38] [CLI] Search & Replace finished successfully.
+[SUCCESS] [2024-02-18 12:44:38] [CLI] Database restored
+[STEP] [2024-02-18 12:44:38] [CLI] Performing table replacement
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_access_ip renamed to mb_access_ip
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_analytics renamed to mb_analytics
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_bbs_faq renamed to mb_bbs_faq
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_bbs_faq_comment renamed to mb_bbs_faq_comment
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_boards renamed to mb_boards
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_cookies renamed to mb_cookies
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_edu_list renamed to mb_edu_list
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_edu_list_comment renamed to mb_edu_list_comment
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_edu_review renamed to mb_edu_review
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_edu_review_comment renamed to mb_edu_review_comment
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_edu_status renamed to mb_edu_status
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_edu_status_comment renamed to mb_edu_status_comment
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_files renamed to mb_files
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_h_editors renamed to mb_h_editors
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_logs renamed to mb_logs
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_meta renamed to mb_meta
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_notice renamed to mb_notice
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_notice_comment renamed to mb_notice_comment
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_options renamed to mb_options
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_question renamed to mb_question
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_question_comment renamed to mb_question_comment
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_referers renamed to mb_referers
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_register renamed to mb_register
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_register_comment renamed to mb_register_comment
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_mb_users renamed to mb_users
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_commentmeta renamed to wp_commentmeta
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_comments renamed to wp_comments
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_links renamed to wp_links
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_options renamed to wp_options
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_postmeta renamed to wp_postmeta
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_posts renamed to wp_posts
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_pum_subscribers renamed to wp_pum_subscribers
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_term_relationships renamed to wp_term_relationships
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_term_taxonomy renamed to wp_term_taxonomy
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_termmeta renamed to wp_termmeta
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_terms renamed to wp_terms
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_usermeta renamed to wp_usermeta
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_users renamed to wp_users
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_yoast_indexable renamed to wp_yoast_indexable
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_yoast_indexable_hierarchy renamed to wp_yoast_indexable_hierarchy
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_yoast_migrations renamed to wp_yoast_migrations
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_yoast_primary_term renamed to wp_yoast_primary_term
+[INFO] [2024-02-18 12:44:38] [CLI] Table 1708260167_wp_yoast_seo_links renamed to wp_yoast_seo_links
+[SUCCESS] [2024-02-18 12:44:38] [CLI] All tables replaced
+[VERBOSE] [2024-02-18 12:44:38] [CLI] Detected table prefix: wp_
+[VERBOSE] [2024-02-18 12:44:38] [CLI] Forwarded table prefix: wp_
+[VERBOSE] [2024-02-18 12:44:38] [CLI] Manifest table prefix: wp_
+[STEP] [2024-02-18 12:44:38] [CLI] Restoring wp-config file...
+[SUCCESS] [2024-02-18 12:44:38] [CLI] WP-Config restored
+[STEP] [2024-02-18 12:44:38] [CLI] Enabling plugins included in the backup
+[VERBOSE] [2024-02-18 12:44:38] [CLI] Detected version WP/PHP for plugin: mangboard/mangboard.php, is (4.0.0/5.5.1)
+[VERBOSE] [2024-02-18 12:44:38] [CLI] Detected version WP/PHP for plugin: popup-maker/popup-maker.php, is (4.9/5.6)
+[INFO] [2024-02-18 12:44:38] [CLI] Plugin popup-maker/popup-maker.php enabled successfully.
+[VERBOSE] [2024-02-18 12:44:38] [CLI] Detected version WP/PHP for plugin: mangboard/mangboard.php, is (4.0.0/5.5.1)
+[INFO] [2024-02-18 12:44:38] [CLI] Plugin mangboard/mangboard.php enabled successfully.
+[VERBOSE] [2024-02-18 12:44:38] [CLI] Detected version WP/PHP for plugin: backup-backup/backup-backup.php, is (4.6/5.6)
+[INFO] [2024-02-18 12:44:38] [CLI] Plugin backup-backup/backup-backup.php enabled successfully.
+[VERBOSE] [2024-02-18 12:44:38] [CLI] Detected version WP/PHP for plugin: options-for-twenty-twenty-one/options-for-twenty-twenty-one.php, is (4.6/5.6)
+[INFO] [2024-02-18 12:44:38] [CLI] Plugin options-for-twenty-twenty-one/options-for-twenty-twenty-one.php enabled successfully.
+[SUCCESS] [2024-02-18 12:44:38] [CLI] All plugins enabled, you are ready to go :)
+[SUCCESS] [2024-02-18 12:44:38] [CLI] Database restored
+[STEP] [2024-02-18 12:44:38] [CLI] Making new login session
+[SUCCESS] [2024-02-18 12:44:38] [CLI] User should be logged in
+[STEP] [2024-02-18 12:44:38] [CLI] Cleaning temporary files...
+[INFO] [2024-02-18 12:44:39] [CLI] Removing 308 files
+[SUCCESS] [2024-02-18 12:44:39] [CLI] Temporary files cleaned
+[INFO] [2024-02-18 12:44:39] [CLI] Restore process took: 11 seconds.
+[SUCCESS] [2024-02-18 12:44:39] [CLI] Restore process completed
+[STEP] [2024-02-18 12:44:39] [CLI] Finalizing restored files
+[INFO] [2024-02-18 12:44:39] [CLI] Unlocking migration
+[END-CODE] [2024-02-18 12:44:39] [CLI] #001

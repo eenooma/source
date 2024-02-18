@@ -34,14 +34,14 @@
 		
 				<div class="address_box">
 					<ul>
-						<li>Tel.02-123-4567</li>
-						<li>Fax:02.-123.4567</li>
-						<li>Email:killdong@gmail.com</li>
-						<li>사업자 등록번호 : 123.45.6789</li>
+						<li>Tel. 010 - 4963 - 8491</li>
+						<li>사업자 등록번호 : 267-29-01563</li>
+						<li>대표자 : 김우선</li>
+						<li>개인정보관리책임자 : 김탁겸</li>
 					</ul>
 
 					<ul>
-						<li>서울 서초구 서초대로 12길, 34 바른 명품 교육원</li>
+						<li>대전 유성구 문화원로 153 (2층)</li>
 					</ul>
 
 					<p class="copyright">Copyright, 바른 명품교육원.All RIGHTS RESERVED.</p>
@@ -106,5 +106,14 @@
 
 <?php wp_footer(); ?>
 
+
+
+
+
+
 </body>
 </html>
+
+
+
+

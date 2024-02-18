@@ -1186,7 +1186,7 @@ if(!function_exists('mbw_get_latest_mb_slide')){
 		if(!empty($latest_list)){
 			foreach($latest_list as $latest_item){
 				if(!empty($latest_item['board_url'])) $latest_permalink		= $latest_item['board_url'];
-				$post_content		= mbw_htmlspecialchars_decode($latest_item[$board_field["fn_content"]]);
+				$post_content		= strip_tags(mbw_htmlspecialchars_decode($latest_item[$board_field["fn_content"]]));
 				if(mb_strlen($post_content)>$title_max_length){
 					$post_content		= mb_substr($post_content, 0, $title_max_length)."...";
 				}
@@ -1482,5 +1482,21 @@ if(!function_exists('mbw_get_latest_mb_video')){
 		$latest_html	.= '</article>';
 		if(has_filter('mf_widget_html')) $latest_html			= apply_filters("mf_widget_html", $latest_html, $data, $widget_name);
 		return $latest_html;
+	}
+}
+
+
+add_shortcode("popup_btn_today", 'popup_btn_today');
+if(!function_exists('popup_btn_today')){
+	function popup_btn_today($args){
+		return "<span class='btn btn-today' style='width: 100%; background-color: #333; color: #fff; padding: 10px; text-align: center; display: inline-block; cursor: pointer;'>오늘 하루 보지 않기</span>
+				<script>
+					jQuery(document).ready(function($){
+						$('.btn-today').on('click', function() {
+							$('#".$args['name']."').trigger('pumSetCookie');
+							$('#".$args['name']."').popmake('close');
+						});
+					});
+				</script>";
 	}
 }
